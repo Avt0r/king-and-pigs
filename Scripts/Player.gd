@@ -31,7 +31,12 @@ func _physics_process(delta: float) -> void:
 	else:
 		anim.play("Fall")
 	
-	if velocity.x != 0 :
-		anim.scale.x = sign(velocity.x)
+
+	if velocity.x < 0:
+		anim.flip_h = true
+		anim.offset.x = -15
+	elif velocity.x > 0:
+		anim.flip_h = false
+		anim.offset.x = 0
 	
 	move_and_slide()
