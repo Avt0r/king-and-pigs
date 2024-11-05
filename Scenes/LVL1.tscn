@@ -1,10 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://fk2w0hpk8mwg"]
+[gd_scene load_steps=12 format=3 uid="uid://fk2w0hpk8mwg"]
 
+[ext_resource type="Script" path="res://Scripts/LevelManager.gd" id="1_cijpk"]
 [ext_resource type="PackedScene" uid="uid://ov5n86ttpjni" path="res://Scenes/Player.tscn" id="1_iwp2t"]
 [ext_resource type="Texture2D" uid="uid://b4av320h1sv8e" path="res://Sprites/King and Pigs/14-TileSets/Terrain (32x32).png" id="2_5a26k"]
-[ext_resource type="Script" path="res://Scenes/MainCamera.gd" id="2_6fni8"]
+[ext_resource type="Script" path="res://Scripts/UserInterface.gd" id="3_a7in6"]
 [ext_resource type="Texture2D" uid="uid://bwy3ykqqyw2y4" path="res://Sprites/King and Pigs/14-TileSets/Decorations (32x32).png" id="3_von58"]
 [ext_resource type="Texture2D" uid="uid://dyn1g3rry8k1i" path="res://Sprites/King and Pigs/11-Door/Idle.png" id="4_mg5nx"]
+[ext_resource type="PackedScene" uid="uid://bsc7i3x65abpo" path="res://Scenes/Diamond.tscn" id="5_bn0vh"]
+[ext_resource type="PackedScene" uid="uid://ce1ttcs50dgvg" path="res://Sprites/King and Pigs/02-King Pig/pig.tscn" id="8_v4s40"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lvyjx"]
 texture = ExtResource("2_5a26k")
@@ -639,20 +642,46 @@ texture = ExtResource("3_von58")
 11:9/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_hvxb2"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 4
+physics_layer_0/collision_mask = 5
 sources/0 = SubResource("TileSetAtlasSource_lvyjx")
 sources/1 = SubResource("TileSetAtlasSource_uod4i")
 
 [node name="LVL1" type="Node2D"]
+script = ExtResource("1_cijpk")
 
 [node name="Player" parent="." instance=ExtResource("1_iwp2t")]
+collision_layer = 1
+platform_floor_layers = 4294967044
+platform_wall_layers = 4
 
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
+[node name="RemoteTransform2D2" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../../Camera2D")
+update_rotation = false
+update_scale = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.5, 1.5)
-script = ExtResource("2_6fni8")
+
+[node name="Control" type="Control" parent="Camera2D"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_a7in6")
+metadata/_edit_use_anchors_ = true
+
+[node name="DiamondsCount" type="Label" parent="Camera2D/Control"]
+layout_mode = 1
+offset_left = -382.0
+offset_top = -214.0
+offset_right = -279.0
+offset_bottom = -170.0
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_hvxb2")
@@ -666,3 +695,10 @@ layer_1/tile_data = PackedInt32Array(131068, 131072, 19, 131069, 196608, 19, 131
 show_behind_parent = true
 position = Vector2(24, 4)
 texture = ExtResource("4_mg5nx")
+
+[node name="Diamond" parent="." instance=ExtResource("5_bn0vh")]
+position = Vector2(158, 26)
+collision_mask = 1
+
+[node name="Pig" parent="." instance=ExtResource("8_v4s40")]
+position = Vector2(354, -176)

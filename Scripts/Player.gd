@@ -3,7 +3,11 @@ extends CharacterBody2D
 const SPEED = 100.0
 const JUMP_VELOCITY = -350.0
 
-@onready var anim = $AnimatedSprite2D
+@onready var anim = $AnimationPlayer
+@onready var sprite = $Sprite2D
+@onready var attackArea = $Area2D
+
+var diamonds: int = 0 
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -16,20 +20,22 @@ func _physics_process(delta: float) -> void:
 		
 		if is_on_wall() && !is_on_floor():
 			if Input.is_action_pressed("Left"): 
-				velocity.x = (JUMP_VELOCITY / 2.1)
-			elif Input.is_action_pressed("Right"):
 				velocity.x = -(JUMP_VELOCITY / 2.1)
+			elif Input.is_action_pressed("Right"):
+				velocity.x = (JUMP_VELOCITY / 2.1)
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis("ui_left", "ui_right")
+	var direction := Input.get_axis("Left", "Right")
 	if velocity.y >= 0:
 		if direction:
 			velocity.x = direction * SPEED
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 	
-	if !direction:
+	if Input.is_action_pressed("Attack"):
+		anim.play("Attack")
+	elif !direction:
 		anim.play("Idle")
 	elif direction && is_on_floor_only():
 		anim.play("Run")
@@ -37,13 +43,21 @@ func _physics_process(delta: float) -> void:
 		anim.play("Jump")
 	elif velocity.y < 0:
 		anim.play("Fall")
-	
 
-	if Input.is_action_pressed("Right"):
-		anim.flip_h = true
-		anim.offset.x = -15
-	elif Input.is_action_pressed("Left"):
-		anim.flip_h = false
-		anim.offset.x = 0
+	if Input.is_action_pressed("Left"):
+		sprite.flip_h = true
+		sprite.offset.x = -15
+	elif Input.is_action_pressed("Right"):
+		sprite.flip_h = false
+		sprite.offset.x = 0
 	
 	move_and_slide()
+	
+func _receive_diamond():
+	diamonds+=1
+	$"../Camera2D/Control"._set_diamonds_count(diamonds)
+
+func _on_deal_damage():
+	for body in attackArea.get_overlapping_bodies():
+		if body.name == "Pig":
+			body.hit(1)
