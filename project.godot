@@ -11,7 +11,6 @@ config_version=5
 [application]
 
 config/name="King and Pigs"
-run/main_scene="res://Scenes/test.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -50,6 +49,8 @@ Attack={
 2d_render/layer_2="Collectable objects"
 2d_render/layer_3="Walls, Flour and Ceiling"
 2d_render/layer_4="Enemies"
+2d_render/layer_5="Destroyable objects"
+2d_render/layer_6="Decorations"
 
 [rendering]
 

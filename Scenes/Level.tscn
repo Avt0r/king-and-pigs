@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://fk2w0hpk8mwg"]
+[gd_scene load_steps=8 format=3 uid="uid://fk2w0hpk8mwg"]
 
 [ext_resource type="Script" path="res://Scripts/Level.gd" id="1_lxrbn"]
 [ext_resource type="PackedScene" uid="uid://ov5n86ttpjni" path="res://Scenes/Player.tscn" id="2_vi7h7"]
 [ext_resource type="Script" path="res://Scripts/UserInterface.gd" id="3_rc5gn"]
 [ext_resource type="PackedScene" uid="uid://f63wl2pq616l" path="res://Scenes/Levels/LevelMap-1.tscn" id="4_d1vgm"]
 [ext_resource type="PackedScene" uid="uid://bsc7i3x65abpo" path="res://Scenes/Diamond.tscn" id="6_cu36o"]
+[ext_resource type="PackedScene" uid="uid://cdyuqtfeagu4b" path="res://Scenes/Box.tscn" id="7_aky8g"]
 [ext_resource type="PackedScene" uid="uid://ce1ttcs50dgvg" path="res://Scenes/Pig.tscn" id="7_xvaxh"]
 
 [node name="Level" type="Node2D"]
@@ -51,3 +52,7 @@ collision_mask = 1
 
 [node name="Pig" parent="." instance=ExtResource("7_xvaxh")]
 position = Vector2(354, -176)
+
+[node name="Box" parent="." instance=ExtResource("7_aky8g")]
+position = Vector2(44, 24)
+collision_mask = 25

@@ -16,7 +16,7 @@ func _physics_process(delta: float) -> void:
 		
 	move_and_slide()
 
-func hit(damage):
+func _on_hit():
 	if hp <= 0: return
 	anim.play("Hit")
 	hp -= 1

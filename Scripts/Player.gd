@@ -47,18 +47,20 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("Left"):
 		sprite.flip_h = true
 		sprite.offset.x = -15
+		attackArea.position.x = -33
 	elif Input.is_action_pressed("Right"):
 		sprite.flip_h = false
 		sprite.offset.x = 0
+		attackArea.position.x = 0
 	
 	move_and_slide()
-	
 
 func _receive_diamond():
 	diamonds+=1
 	$"../Camera2D/Control"._set_diamonds_count(diamonds)
 
 func _on_deal_damage():
+	
 	for body in attackArea.get_overlapping_bodies():
-		if body.name == "Pig":
-			body.hit(1)
+		if body.name == "Pig" || body.name == "Box":
+			body._on_hit()

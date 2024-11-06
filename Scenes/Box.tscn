@@ -1,0 +1,69 @@
+[gd_scene load_steps=11 format=3 uid="uid://cdyuqtfeagu4b"]
+
+[ext_resource type="Script" path="res://Scripts/Box.gd" id="1_5o8tf"]
+[ext_resource type="Texture2D" uid="uid://cr2ngy718vnjb" path="res://Sprites/King and Pigs/08-Box/Idle.png" id="2_i6vja"]
+[ext_resource type="Texture2D" uid="uid://gy8den32oy0t" path="res://Sprites/King and Pigs/08-Box/Hit.png" id="2_rv8w0"]
+[ext_resource type="Texture2D" uid="uid://caf71iv1goq3l" path="res://Sprites/King and Pigs/08-Box/Idle2.png" id="2_vxx3v"]
+[ext_resource type="Texture2D" uid="uid://cp884i3sw4p0v" path="res://Sprites/King and Pigs/08-Box/Idle3.png" id="3_ioo4g"]
+[ext_resource type="Texture2D" uid="uid://skhlqoepc52r" path="res://Sprites/King and Pigs/08-Box/Idle4.png" id="4_r5dha"]
+[ext_resource type="Texture2D" uid="uid://cxwukv8rs66xk" path="res://Sprites/King and Pigs/08-Box/Idle5.png" id="5_q372f"]
+[ext_resource type="Texture2D" uid="uid://kujqbiiut4a8" path="res://Sprites/King and Pigs/08-Box/Idle6.png" id="6_rg4l2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hb4p1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_vxx3v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ioo4g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_r5dha")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_q372f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_rg4l2")
+}],
+"loop": false,
+"name": &"Broken",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_rv8w0")
+}],
+"loop": false,
+"name": &"Hit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_i6vja")
+}],
+"loop": false,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ksudu"]
+size = Vector2(22, 16)
+
+[node name="Box" type="StaticBody2D"]
+collision_layer = 16
+collision_mask = 29
+script = ExtResource("1_5o8tf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -2)
+sprite_frames = SubResource("SpriteFrames_hb4p1")
+animation = &"Broken"
+frame = 4
+frame_progress = 1.0
+speed_scale = 2.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ksudu")
