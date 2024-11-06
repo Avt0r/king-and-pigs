@@ -53,6 +53,7 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
 	
+
 func _receive_diamond():
 	diamonds+=1
 	$"../Camera2D/Control"._set_diamonds_count(diamonds)

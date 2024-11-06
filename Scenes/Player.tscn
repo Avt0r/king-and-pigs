@@ -90,6 +90,9 @@ tracks/0/keys = {
 "values": [Vector2i(0, 8)]
 }
 
+[sub_resource type="Animation" id="Animation_svilc"]
+length = 0.001
+
 [sub_resource type="Animation" id="Animation_0tpio"]
 resource_name = "Run"
 length = 1.6
@@ -107,9 +110,6 @@ tracks/0/keys = {
 "update": 1,
 "values": [Vector2i(0, 9), Vector2i(1, 9), Vector2i(2, 9), Vector2i(3, 9), Vector2i(4, 9), Vector2i(5, 9), Vector2i(6, 9), Vector2i(7, 9)]
 }
-
-[sub_resource type="Animation" id="Animation_svilc"]
-length = 0.001
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kuhc0"]
 _data = {
@@ -147,6 +147,7 @@ texture_filter = 1
 texture = ExtResource("7_eoxfo")
 hframes = 11
 vframes = 10
+frame = 77
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

@@ -6,7 +6,6 @@ var hp = 3
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	anim.play("Idle")
-	
 	anim.animation_finished.connect(self._on_anim_ends)
 
 func _physics_process(delta: float) -> void:

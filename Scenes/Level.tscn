@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=3 uid="uid://fk2w0hpk8mwg"]
+
+[ext_resource type="Script" path="res://Scripts/Level.gd" id="1_lxrbn"]
+[ext_resource type="PackedScene" uid="uid://ov5n86ttpjni" path="res://Scenes/Player.tscn" id="2_vi7h7"]
+[ext_resource type="Script" path="res://Scripts/UserInterface.gd" id="3_rc5gn"]
+[ext_resource type="PackedScene" uid="uid://f63wl2pq616l" path="res://Scenes/Levels/LevelMap-1.tscn" id="4_d1vgm"]
+[ext_resource type="PackedScene" uid="uid://bsc7i3x65abpo" path="res://Scenes/Diamond.tscn" id="6_cu36o"]
+[ext_resource type="PackedScene" uid="uid://ce1ttcs50dgvg" path="res://Scenes/Pig.tscn" id="7_xvaxh"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_lxrbn")
+
+[node name="Player" parent="." instance=ExtResource("2_vi7h7")]
+collision_layer = 1
+platform_floor_layers = 4294967044
+platform_wall_layers = 4
+
+[node name="RemoteTransform2D2" type="RemoteTransform2D" parent="Player"]
+remote_path = NodePath("../../Camera2D")
+update_rotation = false
+update_scale = false
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.5, 1.5)
+
+[node name="Control" type="Control" parent="Camera2D"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_rc5gn")
+metadata/_edit_use_anchors_ = true
+
+[node name="DiamondsCount" type="Label" parent="Camera2D/Control"]
+layout_mode = 1
+offset_left = -382.0
+offset_top = -214.0
+offset_right = -279.0
+offset_bottom = -170.0
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelMap-1" parent="." instance=ExtResource("4_d1vgm")]
+
+[node name="Diamond" parent="." instance=ExtResource("6_cu36o")]
+position = Vector2(158, 26)
+collision_mask = 1
+
+[node name="Pig" parent="." instance=ExtResource("7_xvaxh")]
+position = Vector2(354, -176)
