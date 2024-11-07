@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/Level.gd" id="1_lxrbn"]
 [ext_resource type="PackedScene" uid="uid://ov5n86ttpjni" path="res://Scenes/Player.tscn" id="2_vi7h7"]
-[ext_resource type="Script" path="res://Scripts/UserInterface.gd" id="3_rc5gn"]
+[ext_resource type="PackedScene" uid="uid://choia3yvhsti" path="res://Scenes/InterfaceGame.tscn" id="3_2rmi1"]
 [ext_resource type="PackedScene" uid="uid://f63wl2pq616l" path="res://Scenes/Levels/LevelMap-1.tscn" id="4_d1vgm"]
 [ext_resource type="PackedScene" uid="uid://bsc7i3x65abpo" path="res://Scenes/Diamond.tscn" id="6_cu36o"]
 [ext_resource type="PackedScene" uid="uid://cdyuqtfeagu4b" path="res://Scenes/Box.tscn" id="7_aky8g"]
@@ -23,26 +23,15 @@ update_scale = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.5, 1.5)
+position_smoothing_enabled = true
+position_smoothing_speed = 7.0
 
-[node name="Control" type="Control" parent="Camera2D"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("3_rc5gn")
-metadata/_edit_use_anchors_ = true
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="DiamondsCount" type="Label" parent="Camera2D/Control"]
-layout_mode = 1
-offset_left = -382.0
-offset_top = -214.0
-offset_right = -279.0
-offset_bottom = -170.0
-text = "0"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="Interface" parent="CanvasLayer" instance=ExtResource("3_2rmi1")]
+custom_minimum_size = Vector2(80, 45)
+size_flags_horizontal = 6
+size_flags_vertical = 6
 
 [node name="LevelMap-1" parent="." instance=ExtResource("4_d1vgm")]
 

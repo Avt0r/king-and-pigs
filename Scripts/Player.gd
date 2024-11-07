@@ -7,8 +7,6 @@ const JUMP_VELOCITY = -350.0
 @onready var sprite = $Sprite2D
 @onready var attackArea = $Area2D
 
-var diamonds: int = 0 
-
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
@@ -56,8 +54,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func _receive_diamond():
-	diamonds+=1
-	$"../Camera2D/Control"._set_diamonds_count(diamonds)
+	LevelManager.current_level._receive_diamond()
 
 func _on_deal_damage():
 	
