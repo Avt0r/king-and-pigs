@@ -10,4 +10,5 @@ func _ready() -> void:
 
 func _on_body_entered(body):
 	body._receive_diamond()
+	self.hide()
 	self.queue_free()

@@ -59,11 +59,8 @@ script = ExtResource("1_5o8tf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(0, -2)
 sprite_frames = SubResource("SpriteFrames_hb4p1")
-animation = &"Broken"
-frame = 4
-frame_progress = 1.0
+animation = &"Idle"
 speed_scale = 2.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

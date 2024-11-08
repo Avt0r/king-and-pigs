@@ -1,14 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://f63wl2pq616l"]
+[gd_scene load_steps=10 format=3 uid="uid://cgu0mu7yvnrcf"]
 
-[ext_resource type="Texture2D" uid="uid://b4av320h1sv8e" path="res://Sprites/King and Pigs/14-TileSets/Terrain (32x32).png" id="1_baj4i"]
-[ext_resource type="Texture2D" uid="uid://bwy3ykqqyw2y4" path="res://Sprites/King and Pigs/14-TileSets/Decorations (32x32).png" id="2_fnuba"]
-[ext_resource type="Texture2D" uid="uid://dyn1g3rry8k1i" path="res://Sprites/King and Pigs/11-Door/Idle.png" id="3_lw1da"]
-[ext_resource type="PackedScene" uid="uid://cdyuqtfeagu4b" path="res://Scenes/Box.tscn" id="4_ybp4c"]
-[ext_resource type="PackedScene" uid="uid://bsc7i3x65abpo" path="res://Scenes/Diamond.tscn" id="5_ihep7"]
-[ext_resource type="PackedScene" uid="uid://ce1ttcs50dgvg" path="res://Scenes/Pig.tscn" id="6_43bj6"]
+[ext_resource type="Texture2D" uid="uid://b4av320h1sv8e" path="res://Sprites/King and Pigs/14-TileSets/Terrain (32x32).png" id="1_kpbky"]
+[ext_resource type="Texture2D" uid="uid://bwy3ykqqyw2y4" path="res://Sprites/King and Pigs/14-TileSets/Decorations (32x32).png" id="2_u26tu"]
+[ext_resource type="Texture2D" uid="uid://dyn1g3rry8k1i" path="res://Sprites/King and Pigs/11-Door/Idle.png" id="3_d5feo"]
+[ext_resource type="PackedScene" uid="uid://cdyuqtfeagu4b" path="res://Scenes/Box.tscn" id="4_5l8i5"]
+[ext_resource type="PackedScene" uid="uid://bsc7i3x65abpo" path="res://Scenes/Diamond.tscn" id="5_sdi6p"]
+[ext_resource type="PackedScene" uid="uid://ce1ttcs50dgvg" path="res://Scenes/Pig.tscn" id="6_5iyh1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lvyjx"]
-texture = ExtResource("1_baj4i")
+texture = ExtResource("1_kpbky")
 2:2/0 = 0
 2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:2/0 = 0
@@ -575,7 +575,7 @@ texture = ExtResource("1_baj4i")
 35:23/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uod4i"]
-texture = ExtResource("2_fnuba")
+texture = ExtResource("2_u26tu")
 2:2/0 = 0
 3:2/0 = 0
 4:2/0 = 0
@@ -663,17 +663,17 @@ visibility_layer = 4
 z_index = -1
 texture_filter = 1
 position = Vector2(-9, 4)
-texture = ExtResource("3_lw1da")
+texture = ExtResource("3_d5feo")
 
-[node name="Box" parent="." instance=ExtResource("4_ybp4c")]
+[node name="Box" parent="." instance=ExtResource("4_5l8i5")]
 z_index = 0
 position = Vector2(242, 24)
 
-[node name="Diamond" parent="." instance=ExtResource("5_ihep7")]
+[node name="Diamond" parent="." instance=ExtResource("5_sdi6p")]
 position = Vector2(129, 24)
 
-[node name="Diamond2" parent="." instance=ExtResource("5_ihep7")]
+[node name="Diamond2" parent="." instance=ExtResource("5_sdi6p")]
 position = Vector2(260, -24)
 
-[node name="Pig" parent="." instance=ExtResource("6_43bj6")]
+[node name="Pig" parent="." instance=ExtResource("6_5iyh1")]
 position = Vector2(351, -174)

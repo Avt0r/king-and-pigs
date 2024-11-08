@@ -1,0 +1,131 @@
+[gd_scene load_steps=15 format=3 uid="uid://bcnswvaj2uhro"]
+
+[ext_resource type="Texture2D" uid="uid://cwk0id0opn4hq" path="res://Sprites/King and Pigs/Kings and Pigs.png" id="2_148vw"]
+[ext_resource type="Texture2D" uid="uid://xu1x1omih7cw" path="res://Sprites/King and Pigs/11-Door/Opening (46x56).png" id="3_6hl3o"]
+[ext_resource type="Texture2D" uid="uid://dyn1g3rry8k1i" path="res://Sprites/King and Pigs/11-Door/Idle.png" id="3_eni4y"]
+[ext_resource type="Texture2D" uid="uid://ddtrj3fmws5yy" path="res://Sprites/King and Pigs/11-Door/Closiong (46x56).png" id="3_qmnn6"]
+[ext_resource type="Script" path="res://Scenes/MainMenuDoor.gd" id="4_n5ftv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v1l5d"]
+atlas = ExtResource("3_qmnn6")
+region = Rect2(0, 0, 46, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k1b8r"]
+atlas = ExtResource("3_qmnn6")
+region = Rect2(46, 0, 46, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5rdha"]
+atlas = ExtResource("3_qmnn6")
+region = Rect2(92, 0, 46, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rwbxl"]
+atlas = ExtResource("3_6hl3o")
+region = Rect2(0, 0, 46, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8250f"]
+atlas = ExtResource("3_6hl3o")
+region = Rect2(46, 0, 46, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1kve2"]
+atlas = ExtResource("3_6hl3o")
+region = Rect2(92, 0, 46, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aexfe"]
+atlas = ExtResource("3_6hl3o")
+region = Rect2(138, 0, 46, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yktpf"]
+atlas = ExtResource("3_6hl3o")
+region = Rect2(184, 0, 46, 56)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qvw80"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v1l5d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k1b8r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5rdha")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_eni4y")
+}],
+"loop": false,
+"name": &"Closing",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_eni4y")
+}],
+"loop": false,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rwbxl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8250f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1kve2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aexfe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yktpf")
+}],
+"loop": false,
+"name": &"Opening",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="KingsAndPigs" type="Sprite2D" parent="CanvasLayer/Control"]
+top_level = true
+texture_filter = 1
+position = Vector2(578, 191)
+scale = Vector2(8, 8)
+texture = ExtResource("2_148vw")
+
+[node name="Control" type="Control" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -138.5
+offset_top = -335.0
+offset_right = 138.5
+grow_horizontal = 2
+grow_vertical = 0
+mouse_default_cursor_shape = 2
+script = ExtResource("4_n5ftv")
+
+[node name="Door" type="AnimatedSprite2D" parent="CanvasLayer/Control/Control"]
+texture_filter = 1
+scale = Vector2(6.1087, 6.1087)
+sprite_frames = SubResource("SpriteFrames_qvw80")
+animation = &"Closing"
+speed_scale = 2.0
+centered = false
+
+[node name="Camera2D" type="Camera2D" parent="."]
