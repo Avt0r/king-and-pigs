@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="King and Pigs"
+run/main_scene="res://Scenes/MainMenu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -22,6 +23,12 @@ LevelManager="*res://Scripts/LevelManager.gd"
 
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[importer_defaults]
+
+animation_library={
+"animation/fps": 60.0
+}
 
 [input]
 
@@ -54,6 +61,10 @@ Lclick={
 ]
 }
 
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
 [layer_names]
 
 2d_render/layer_1="Player"
@@ -67,4 +78,5 @@ Lclick={
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
 environment/defaults/default_clear_color=Color(0.247059, 0.219608, 0.317647, 1)
