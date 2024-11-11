@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ov5n86ttpjni"]
+[gd_scene load_steps=13 format=3 uid="uid://ov5n86ttpjni"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_ddcx0"]
 [ext_resource type="Texture2D" uid="uid://dpdw8yfa5hvng" path="res://Sprites/King and Pigs/01-King Human/King-Human.png" id="7_eoxfo"]
@@ -90,9 +90,6 @@ tracks/0/keys = {
 "values": [Vector2i(0, 8)]
 }
 
-[sub_resource type="Animation" id="Animation_svilc"]
-length = 0.001
-
 [sub_resource type="Animation" id="Animation_0tpio"]
 resource_name = "Run"
 length = 1.6
@@ -111,13 +108,44 @@ tracks/0/keys = {
 "values": [Vector2i(0, 9), Vector2i(1, 9), Vector2i(2, 9), Vector2i(3, 9), Vector2i(4, 9), Vector2i(5, 9), Vector2i(6, 9), Vector2i(7, 9)]
 }
 
+[sub_resource type="Animation" id="Animation_igfyj"]
+resource_name = "Dead"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 1), Vector2i(1, 1), Vector2i(2, 1), Vector2i(3, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_fdr4y"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kuhc0"]
 _data = {
 "Attack": SubResource("Animation_0i24b"),
+"Dead": SubResource("Animation_igfyj"),
 "Fall": SubResource("Animation_1qvld"),
 "Idle": SubResource("Animation_v405l"),
 "Jump": SubResource("Animation_xfkl0"),
-"RESET": SubResource("Animation_svilc"),
+"RESET": SubResource("Animation_fdr4y"),
 "Run": SubResource("Animation_0tpio")
 }
 
