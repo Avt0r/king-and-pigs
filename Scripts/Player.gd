@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+var hp = 3
+
 const SPEED = 100.0
 const JUMP_VELOCITY = -350.0
 
@@ -56,7 +58,25 @@ func _receive_diamond():
 	LevelManager.current_level._receive_diamond()
 
 func _on_deal_damage():
-	
 	for body in attackArea.get_overlapping_bodies():
 		if body.name == "Pig" || body.name == "Box":
 			body._on_hit()
+
+func _on_hit():
+	if hp == 1:
+		_on_dead()
+		return
+	
+	hp -= 1
+	LevelManager.current_level.hit()
+	pass
+
+func _on_heal():
+	if hp == 3: return
+	
+	hp += 1
+	LevelManager.current_level.heal()
+	pass
+
+func _on_dead():
+	pass
