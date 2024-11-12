@@ -1,5 +1,12 @@
 extends CharacterBody2D
 
+enum states{
+	IDLE,
+	WALKING,
+	ATTACK,
+	DEAD
+}
+
 @onready var anim = $AnimatedSprite2D
 
 var hp = 3
@@ -15,6 +22,10 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+		
+	#var collision = move_and_collide(direction * speed * delta)
+	#if collision:
+		#direction *= -1
 		
 	move_and_slide()
 

@@ -161,3 +161,11 @@ texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_5fhy6")
 animation = &"Idle"
 speed_scale = 1.5
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+position = Vector2(13, 11)
+target_position = Vector2(0, 5)
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+position = Vector2(-7, 11)
+target_position = Vector2(0, 5)

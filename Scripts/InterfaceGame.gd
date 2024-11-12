@@ -1,14 +1,17 @@
 extends Control
 
+@onready var window_game = $GameProcess
+@onready var window_menu = $Menu
+
 @onready var hearts = [
-	$Container/LiveBar/Heart1,
-	$Container/LiveBar/Heart2,
-	$Container/LiveBar/Heart3
+	$GameProcess/LiveBar/Heart1,
+	$GameProcess/LiveBar/Heart2,
+	$GameProcess/LiveBar/Heart3
 ]
 
 @onready var numbers = [
-	$Container/Diamond/Number1,
-	$Container/Diamond/Number2
+	$GameProcess/Diamond/Number1,
+	$GameProcess/Diamond/Number2
 ]
 
 var lives_now = 3
@@ -20,6 +23,8 @@ func _ready() -> void:
 	
 	for h in hearts:
 		h.animation_finished.connect(self._on_heart_anim_finished)
+	
+	window_menu.hide()
 
 func _set_diamonds_count(count):
 	if count / 10 - 1 < 0: 
@@ -44,3 +49,17 @@ func _heal():
 func _hit():
 	hearts[lives_now-1].play("Hit")
 	lives_now -= 1
+
+func _unhandled_input(event: InputEvent) -> void:
+	if Input.is_action_pressed("Menu"):
+		if !window_menu.visible:
+			window_menu.show()
+			get_tree().paused = true
+		else:
+			window_menu.hide()
+			get_tree().paused = false
+
+
+func _on_resume_pressed() -> void:
+	window_menu.hide()
+	get_tree().paused = false

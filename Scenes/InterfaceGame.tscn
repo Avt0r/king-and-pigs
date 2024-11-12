@@ -155,6 +155,7 @@ animations = [{
 }]
 
 [node name="Interface" type="Control"]
+process_mode = 3
 custom_minimum_size = Vector2(1152, 648)
 layout_mode = 3
 anchors_preset = 15
@@ -164,31 +165,36 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_uevu2")
 
-[node name="Container" type="Container" parent="."]
+[node name="GameProcess" type="Control" parent="."]
 layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="LiveBar" type="Sprite2D" parent="Container"]
+[node name="LiveBar" type="Sprite2D" parent="GameProcess"]
 texture_filter = 1
 position = Vector2(150, 80)
 scale = Vector2(4, 4)
 texture = ExtResource("1_j7lro")
 
-[node name="Heart1" type="AnimatedSprite2D" parent="Container/LiveBar"]
+[node name="Heart1" type="AnimatedSprite2D" parent="GameProcess/LiveBar"]
 position = Vector2(-13, 3.8147e-06)
 sprite_frames = SubResource("SpriteFrames_xm4y1")
 animation = &"Idle"
 
-[node name="Heart2" type="AnimatedSprite2D" parent="Container/LiveBar"]
+[node name="Heart2" type="AnimatedSprite2D" parent="GameProcess/LiveBar"]
 position = Vector2(-1.99999, 3.8147e-06)
 sprite_frames = SubResource("SpriteFrames_xm4y1")
 animation = &"Idle"
 
-[node name="Heart3" type="AnimatedSprite2D" parent="Container/LiveBar"]
+[node name="Heart3" type="AnimatedSprite2D" parent="GameProcess/LiveBar"]
 position = Vector2(9.00001, 3.8147e-06)
 sprite_frames = SubResource("SpriteFrames_xm4y1")
 animation = &"Idle"
 
-[node name="Diamond" type="AnimatedSprite2D" parent="Container"]
+[node name="Diamond" type="AnimatedSprite2D" parent="GameProcess"]
 texture_filter = 1
 position = Vector2(100, 144)
 scale = Vector2(4, 4)
@@ -196,7 +202,7 @@ sprite_frames = SubResource("SpriteFrames_3f7vb")
 animation = &"Idle"
 frame_progress = 0.654672
 
-[node name="Number1" type="Sprite2D" parent="Container/Diamond"]
+[node name="Number1" type="Sprite2D" parent="GameProcess/Diamond"]
 texture_filter = 1
 position = Vector2(12.75, -0.499996)
 scale = Vector2(1.2, 1.2)
@@ -204,10 +210,36 @@ texture = ExtResource("3_xpamt")
 hframes = 10
 frame = 9
 
-[node name="Number2" type="Sprite2D" parent="Container/Diamond"]
+[node name="Number2" type="Sprite2D" parent="GameProcess/Diamond"]
 texture_filter = 1
 position = Vector2(19.25, -0.499996)
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("3_xpamt")
 hframes = 10
 frame = 9
+
+[node name="Menu" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Resume" type="Button" parent="Menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -15.5
+offset_right = 35.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Resume"
+
+[connection signal="pressed" from="Menu/Resume" to="." method="_on_resume_pressed"]
