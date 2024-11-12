@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cgu0mu7yvnrcf"]
+[gd_scene load_steps=11 format=3 uid="uid://cgu0mu7yvnrcf"]
 
 [ext_resource type="Texture2D" uid="uid://b4av320h1sv8e" path="res://Sprites/King and Pigs/14-TileSets/Terrain (32x32).png" id="1_kpbky"]
 [ext_resource type="Texture2D" uid="uid://bwy3ykqqyw2y4" path="res://Sprites/King and Pigs/14-TileSets/Decorations (32x32).png" id="2_u26tu"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cdyuqtfeagu4b" path="res://Scenes/Box.tscn" id="4_5l8i5"]
 [ext_resource type="PackedScene" uid="uid://bsc7i3x65abpo" path="res://Scenes/Diamond.tscn" id="5_sdi6p"]
 [ext_resource type="PackedScene" uid="uid://ce1ttcs50dgvg" path="res://Scenes/Pig.tscn" id="6_5iyh1"]
+[ext_resource type="PackedScene" uid="uid://d1moe7iolsxtw" path="res://Scenes/Spike.tscn" id="7_78wto"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lvyjx"]
 texture = ExtResource("1_kpbky")
@@ -677,3 +678,6 @@ position = Vector2(260, -24)
 
 [node name="Pig" parent="." instance=ExtResource("6_5iyh1")]
 position = Vector2(351, -174)
+
+[node name="Spike" parent="." instance=ExtResource("7_78wto")]
+position = Vector2(194, 25)

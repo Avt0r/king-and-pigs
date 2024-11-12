@@ -78,6 +78,7 @@ pointing/emulate_touch_from_mouse=true
 2d_render/layer_4="Enemies"
 2d_render/layer_5="Destroyable objects"
 2d_render/layer_6="Decorations"
+2d_render/layer_7="Traps"
 
 [rendering]
 

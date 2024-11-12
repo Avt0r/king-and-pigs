@@ -9,7 +9,11 @@ const JUMP_VELOCITY = -350.0
 @onready var sprite = $Sprite2D
 @onready var attackArea = $Area2D
 
+var alive = true
+
 func _physics_process(delta: float) -> void:
+	if !alive: return
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -68,15 +72,18 @@ func _on_hit():
 		return
 	
 	hp -= 1
-	LevelManager.current_level.hit()
-	pass
+	LevelManager.current_level.interface._hit()
+	anim.play("Hit")
 
 func _on_heal():
 	if hp == 3: return
 	
 	hp += 1
-	LevelManager.current_level.heal()
-	pass
+	LevelManager.current_level.interface._heal()
+	
 
 func _on_dead():
+	alive = false
+	LevelManager.current_level.interface._hit()
+	anim.play("Dead")
 	pass
