@@ -12,11 +12,13 @@ const JUMP_VELOCITY = -350.0
 var alive = true
 
 func _physics_process(delta: float) -> void:
-	if !alive: return
-	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+	
+	if !alive: 
+		move_and_slide()
+		return
 
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and (is_on_floor() || is_on_wall()):

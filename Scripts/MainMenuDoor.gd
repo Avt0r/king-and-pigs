@@ -16,5 +16,5 @@ func _on_mouse_exited():
 	anim.play("Closing")
 
 func _unhandled_input(event: InputEvent) -> void:
-	if Input.is_action_pressed("Lclick"):
+	if Input.is_action_pressed("Lclick") || Input.is_action_pressed("Enter"):
 		get_tree().change_scene_to_file("res://Scenes/Level.tscn")

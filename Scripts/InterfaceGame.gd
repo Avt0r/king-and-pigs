@@ -2,6 +2,7 @@ extends Control
 
 @onready var window_game = $GameProcess
 @onready var window_menu = $Menu
+@onready var window_dead = $Dead
 
 @onready var hearts = [
 	$GameProcess/LiveBar/Heart1,
@@ -24,7 +25,9 @@ func _ready() -> void:
 	for h in hearts:
 		h.animation_finished.connect(self._on_heart_anim_finished)
 	
+	window_game.show()
 	window_menu.hide()
+	window_dead.hide()
 
 func _set_diamonds_count(count):
 	if count / 10 - 1 < 0: 
@@ -59,7 +62,19 @@ func _unhandled_input(event: InputEvent) -> void:
 			window_menu.hide()
 			get_tree().paused = false
 
-
 func _on_resume_pressed() -> void:
 	window_menu.hide()
 	get_tree().paused = false
+
+func _to_main_menu() -> void:
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn")
+
+func _on_dead():
+	window_dead.show()
+	get_tree().paused = true
+	get_tree().reload_current_scene()
+
+func _on_reload_pressed() -> void:
+	get_tree().paused = false
+	get_tree().reload_current_scene()
