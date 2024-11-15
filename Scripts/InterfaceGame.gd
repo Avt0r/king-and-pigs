@@ -73,7 +73,6 @@ func _to_main_menu() -> void:
 func _on_dead():
 	window_dead.show()
 	get_tree().paused = true
-	get_tree().reload_current_scene()
 
 func _on_reload_pressed() -> void:
 	get_tree().paused = false

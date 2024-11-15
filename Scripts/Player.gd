@@ -60,6 +60,10 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
 
+func _on_anim_finished():
+	if anim.current_animation == "Dead":
+		LevelManager.current_level.interface._on_dead()
+
 func _receive_diamond():
 	LevelManager.current_level._receive_diamond()
 
@@ -88,4 +92,3 @@ func _on_dead():
 	alive = false
 	LevelManager.current_level.interface._hit()
 	anim.play("Dead")
-	pass
