@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://c63n8yryxx8g2"]
+
+[ext_resource type="Texture2D" uid="uid://cuvjxtyfmmeix" path="res://Sprites/Keyboard Letters and Symbols.png" id="1_iodgs"]
+
+[node name="KeyboardLettersAndSymbols" type="Sprite2D"]
+z_index = -1
+texture_filter = 1
+position = Vector2(81, -3)
+texture = ExtResource("1_iodgs")
+hframes = 8
+vframes = 14

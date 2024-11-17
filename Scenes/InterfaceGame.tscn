@@ -287,3 +287,5 @@ text = "Menu"
 [connection signal="pressed" from="Menu/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="Menu/VBoxContainer/ToMenu" to="." method="_to_main_menu"]
 [connection signal="pressed" from="Menu/VBoxContainer/Reload" to="." method="_on_reload_pressed"]
+[connection signal="pressed" from="Dead/VBoxContainer/Reload" to="." method="_on_reload_pressed"]
+[connection signal="pressed" from="Dead/VBoxContainer/ToMenu" to="." method="_to_main_menu"]

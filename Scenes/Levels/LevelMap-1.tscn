@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://f63wl2pq616l"]
+[gd_scene load_steps=13 format=3 uid="uid://f63wl2pq616l"]
 
 [ext_resource type="Texture2D" uid="uid://b4av320h1sv8e" path="res://Sprites/King and Pigs/14-TileSets/Terrain (32x32).png" id="1_baj4i"]
 [ext_resource type="Texture2D" uid="uid://bwy3ykqqyw2y4" path="res://Sprites/King and Pigs/14-TileSets/Decorations (32x32).png" id="2_fnuba"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://bsc7i3x65abpo" path="res://Scenes/Diamond.tscn" id="5_ihep7"]
 [ext_resource type="PackedScene" uid="uid://ce1ttcs50dgvg" path="res://Scenes/Pig.tscn" id="6_43bj6"]
 [ext_resource type="PackedScene" uid="uid://d1moe7iolsxtw" path="res://Scenes/Spike.tscn" id="7_fkngf"]
+[ext_resource type="PackedScene" uid="uid://ceh4popbhdp38" path="res://Scenes/keyboard_extras.tscn" id="8_1d1v7"]
+[ext_resource type="PackedScene" uid="uid://c63n8yryxx8g2" path="res://Scenes/keyboard_symbols.tscn" id="9_78bpa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lvyjx"]
 texture = ExtResource("1_baj4i")
@@ -681,3 +683,19 @@ position = Vector2(351, -174)
 
 [node name="Spike" parent="." instance=ExtResource("7_fkngf")]
 position = Vector2(190, 24)
+
+[node name="KeyboardJump" parent="." instance=ExtResource("8_1d1v7")]
+show_behind_parent = true
+
+[node name="KeyboardAttack" parent="." instance=ExtResource("9_78bpa")]
+show_behind_parent = true
+position = Vector2(314, -196)
+frame = 41
+
+[node name="KeyboardLeft" parent="." instance=ExtResource("9_78bpa")]
+position = Vector2(31, -9)
+frame = 2
+
+[node name="KeyboardRight" parent="." instance=ExtResource("9_78bpa")]
+position = Vector2(48, -9)
+frame = 3

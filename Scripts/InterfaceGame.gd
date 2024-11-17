@@ -7,22 +7,18 @@ extends Control
 @onready var hearts = [
 	$GameProcess/LiveBar/Heart1,
 	$GameProcess/LiveBar/Heart2,
-	$GameProcess/LiveBar/Heart3
-]
+	$GameProcess/LiveBar/Heart3]
 
 @onready var numbers = [
 	$GameProcess/Diamond/Number1,
-	$GameProcess/Diamond/Number2
-]
+	$GameProcess/Diamond/Number2]
 
 var lives_now = 3
 
 func _ready() -> void:
-	hearts[0].play("Idle")
-	hearts[1].play("Idle")
-	hearts[2].play("Idle")
 	
 	for h in hearts:
+		h.play("Idle")
 		h.animation_finished.connect(self._on_heart_anim_finished)
 	
 	window_game.show()
