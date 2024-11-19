@@ -18,8 +18,7 @@
 
 ![Скриншот 1](Screen1.png)
 
-https://www.youtube.com/watch?v=PIesUMBi0DA
-
+<iframe width="560" height="315" src="https://www.youtube.com/watch?v=PIesUMBi0DA" frameborder="0" allowfullscreen></iframe>
 ## Установка
 
 Инструкции по установке игры. Если игра доступна через Steam, Itch.io или другой сервис, дайте ссылку на страницу загрузки.
