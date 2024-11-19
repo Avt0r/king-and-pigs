@@ -18,7 +18,8 @@
 
 ![Скриншот 1](Screen1.png)
 
-[Посмотреть видео](https://www.youtube.com/watch?v=PIesUMBi0DA)
+https://www.youtube.com/watch?v=PIesUMBi0DA
+
 ## Установка
 
 Инструкции по установке игры. Если игра доступна через Steam, Itch.io или другой сервис, дайте ссылку на страницу загрузки.
