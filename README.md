@@ -18,7 +18,11 @@
 
 ![Скриншот 1](Screen1.png)
 
-<iframe width="560" height="315" src="https://www.youtube.com/watch?v=PIesUMBi0DA" frameborder="0" allowfullscreen></iframe>
+<video width="320" height="240" controls>
+  <source src="https://www.youtube.com/watch?v=PIesUMBi0DA" type="video/mp4">
+  Ваш браузер не поддерживает видео.
+</video>
+
 ## Установка
 
 Инструкции по установке игры. Если игра доступна через Steam, Itch.io или другой сервис, дайте ссылку на страницу загрузки.
