@@ -4,6 +4,7 @@ extends StaticBody2D
 @onready var collision = $CollisionShape2D
 
 func _ready() -> void:
+	add_to_group("Destroyable")
 	anim.animation_finished.connect(self._on_anim_finished)
 	anim.play("Idle")
 

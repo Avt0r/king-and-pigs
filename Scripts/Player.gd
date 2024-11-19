@@ -10,13 +10,30 @@ const JUMP_VELOCITY = -350.0
 @onready var attackArea = $Area2D
 
 var alive = true
+var out = false
+var door_exit 
+
+func _ready() -> void:
+	anim.play("In")
 
 func _physics_process(delta: float) -> void:
+	if anim.current_animation == "In" or anim.current_animation == "Out": return
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	
-	if !alive: 
+	#двигаемся к двери
+	if out:
+		if position.x > door_exit.position.x + 1:
+			velocity.x = - SPEED
+		elif position.x < door_exit.position.x - 1:
+			velocity.x = SPEED
+		else:
+			
+			anim.play("Out")
+	
+	if !alive or out: 
 		move_and_slide()
 		return
 
@@ -63,16 +80,20 @@ func _physics_process(delta: float) -> void:
 func _on_anim_finished():
 	if anim.current_animation == "Dead":
 		LevelManager.current_level.interface._on_dead()
+	if anim.current_animation == "In":
+		anim.play("Idle")
 
 func _receive_diamond():
 	LevelManager.current_level._receive_diamond()
 
 func _on_deal_damage():
 	for body in attackArea.get_overlapping_bodies():
-		if body.name == "Pig" || body.name == "Box":
+		if body.is_in_group("Enemies") || body.is_in_group("Destroyable"):
 			body._on_hit()
 
 func _on_hit():
+	if anim.current_animation == "In" or anim.current_animation == "Out" or anim.current_animation == "Dead": return
+	
 	if hp == 1:
 		_on_dead()
 		return
@@ -82,13 +103,21 @@ func _on_hit():
 	anim.play("Hit")
 
 func _on_heal():
+	if anim.current_animation == "In" or anim.current_animation == "Out" or anim.current_animation == "Dead": return
+	
 	if hp == 3: return
 	
 	hp += 1
 	LevelManager.current_level.interface._heal()
-	
 
 func _on_dead():
 	alive = false
 	LevelManager.current_level.interface._hit()
 	anim.play("Dead")
+
+func _on_out(door):
+	out = true
+	door_exit = door
+
+func _next_level():
+	LevelManager.current_level._next_level()

@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://bxugi8erbvh2q"]
+
+[ext_resource type="Texture2D" uid="uid://ddtrj3fmws5yy" path="res://Sprites/King and Pigs/11-Door/Closiong (46x56).png" id="1_uadvo"]
+[ext_resource type="Script" path="res://Scripts/Door.gd" id="2_8s5vv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y6osf"]
+atlas = ExtResource("1_uadvo")
+region = Rect2(0, 0, 46, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t2021"]
+atlas = ExtResource("1_uadvo")
+region = Rect2(46, 0, 46, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w1pox"]
+atlas = ExtResource("1_uadvo")
+region = Rect2(92, 0, 46, 56)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sor8j"]
+animations = [{
+"frames": [{
+"duration": 4.0,
+"texture": SubResource("AtlasTexture_y6osf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t2021")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w1pox")
+}],
+"loop": false,
+"name": &"Closing",
+"speed": 5.0
+}]
+
+[node name="Door" type="AnimatedSprite2D"]
+visibility_layer = 4
+z_index = -1
+texture_filter = 1
+position = Vector2(-9, 4)
+sprite_frames = SubResource("SpriteFrames_sor8j")
+animation = &"Closing"
+script = ExtResource("2_8s5vv")

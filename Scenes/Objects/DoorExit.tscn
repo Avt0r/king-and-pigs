@@ -1,0 +1,75 @@
+[gd_scene load_steps=11 format=3 uid="uid://dgflrg2mjgqtd"]
+
+[ext_resource type="Texture2D" uid="uid://dyn1g3rry8k1i" path="res://Sprites/King and Pigs/11-Door/Idle.png" id="1_ddihl"]
+[ext_resource type="Texture2D" uid="uid://xu1x1omih7cw" path="res://Sprites/King and Pigs/11-Door/Opening (46x56).png" id="2_isev7"]
+[ext_resource type="Script" path="res://Scripts/DoorExit.gd" id="3_dut37"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y07t6"]
+atlas = ExtResource("2_isev7")
+region = Rect2(0, 0, 46, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_31htd"]
+atlas = ExtResource("2_isev7")
+region = Rect2(46, 0, 46, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j0oqt"]
+atlas = ExtResource("2_isev7")
+region = Rect2(92, 0, 46, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7b7hn"]
+atlas = ExtResource("2_isev7")
+region = Rect2(138, 0, 46, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_egkfx"]
+atlas = ExtResource("2_isev7")
+region = Rect2(184, 0, 46, 56)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2c6us"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ddihl")
+}],
+"loop": false,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y07t6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_31htd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j0oqt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7b7hn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_egkfx")
+}],
+"loop": false,
+"name": &"Opening",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0xsia"]
+size = Vector2(45, 10)
+
+[node name="DoorExit" type="AnimatedSprite2D"]
+visibility_layer = 4
+z_index = -1
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_2c6us")
+animation = &"Opening"
+script = ExtResource("3_dut37")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, 23)
+shape = SubResource("RectangleShape2D_0xsia")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]

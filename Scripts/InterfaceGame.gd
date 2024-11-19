@@ -17,6 +17,8 @@ var lives_now = 3
 
 func _ready() -> void:
 	
+	$GameProcess/Diamond.play("Idle")
+	
 	for h in hearts:
 		h.play("Idle")
 		h.animation_finished.connect(self._on_heart_anim_finished)
@@ -34,22 +36,23 @@ func _set_diamonds_count(count):
 		numbers[1].frame = 9
 	else:
 		numbers[1].frame = count % 10 - 1
-	
 
 func _on_heart_anim_finished():
 	if hearts[lives_now].animation == "Hit":
 		hearts[lives_now].hide()
 
 func _heal():
+	if lives_now == 3: return
 	lives_now += 1
 	hearts[lives_now-1].show()
 	hearts[lives_now-1].play("Idle")
 
 func _hit():
+	if lives_now == 0: return
 	hearts[lives_now-1].play("Hit")
 	lives_now -= 1
 
-func _unhandled_input(event: InputEvent) -> void:
+func _unhandled_input(_event: InputEvent) -> void:
 	if Input.is_action_pressed("Menu"):
 		if !window_menu.visible:
 			window_menu.show()
@@ -64,7 +67,7 @@ func _on_resume_pressed() -> void:
 
 func _to_main_menu() -> void:
 	get_tree().paused = false
-	get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn")
+	get_tree().change_scene_to_file("res://Scenes/UI/MainMenu.tscn")
 
 func _on_dead():
 	window_dead.show()

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dhnemrs2srdee"]
+
+[ext_resource type="Texture2D" uid="uid://csixbdjmgub8s" path="res://Sprites/King and Pigs/12-Live and Coins/Numbers (6x8).png" id="1_5e6hm"]
+
+[node name="LevelNumber" type="Sprite2D"]
+texture_filter = 1
+position = Vector2(-10, -34)
+scale = Vector2(3, 3)
+texture = ExtResource("1_5e6hm")
+hframes = 10
