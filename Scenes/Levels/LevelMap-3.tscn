@@ -1,17 +1,17 @@
-[gd_scene load_steps=13 format=3 uid="uid://0jrv22fqpyrb"]
+[gd_scene load_steps=13 format=3 uid="uid://tfsdnh4g4den"]
 
-[ext_resource type="Texture2D" uid="uid://b4av320h1sv8e" path="res://Sprites/King and Pigs/14-TileSets/Terrain (32x32).png" id="1_0kyfw"]
-[ext_resource type="Texture2D" uid="uid://bwy3ykqqyw2y4" path="res://Sprites/King and Pigs/14-TileSets/Decorations (32x32).png" id="2_xqhph"]
-[ext_resource type="PackedScene" uid="uid://dgflrg2mjgqtd" path="res://Scenes/Objects/DoorExit.tscn" id="6_myv8h"]
-[ext_resource type="PackedScene" uid="uid://bxugi8erbvh2q" path="res://Scenes/Objects/DoorEnter.tscn" id="7_kr32u"]
-[ext_resource type="PackedScene" uid="uid://dhnemrs2srdee" path="res://Scenes/UI/LevelNumber.tscn" id="8_ry8qe"]
-[ext_resource type="PackedScene" uid="uid://bsc7i3x65abpo" path="res://Scenes/Objects/Diamond.tscn" id="8_ujnj6"]
-[ext_resource type="PackedScene" uid="uid://d1moe7iolsxtw" path="res://Scenes/Traps/Spike.tscn" id="9_4snj6"]
-[ext_resource type="PackedScene" uid="uid://ce1ttcs50dgvg" path="res://Scenes/Enemies/Pig.tscn" id="9_y0a46"]
-[ext_resource type="PackedScene" uid="uid://ov5n86ttpjni" path="res://Scenes/Player.tscn" id="12_d25np"]
+[ext_resource type="Texture2D" uid="uid://b4av320h1sv8e" path="res://Sprites/King and Pigs/14-TileSets/Terrain (32x32).png" id="1_oe0ft"]
+[ext_resource type="Texture2D" uid="uid://bwy3ykqqyw2y4" path="res://Sprites/King and Pigs/14-TileSets/Decorations (32x32).png" id="2_qcrsy"]
+[ext_resource type="PackedScene" uid="uid://dgflrg2mjgqtd" path="res://Scenes/Objects/DoorExit.tscn" id="6_mmpcr"]
+[ext_resource type="PackedScene" uid="uid://bxugi8erbvh2q" path="res://Scenes/Objects/DoorEnter.tscn" id="7_jwlby"]
+[ext_resource type="PackedScene" uid="uid://bsc7i3x65abpo" path="res://Scenes/Objects/Diamond.tscn" id="8_f3ps0"]
+[ext_resource type="PackedScene" uid="uid://dhnemrs2srdee" path="res://Scenes/UI/LevelNumber.tscn" id="8_nuqet"]
+[ext_resource type="PackedScene" uid="uid://ce1ttcs50dgvg" path="res://Scenes/Enemies/Pig.tscn" id="9_70fed"]
+[ext_resource type="PackedScene" uid="uid://d1moe7iolsxtw" path="res://Scenes/Traps/Spike.tscn" id="9_sq1qk"]
+[ext_resource type="PackedScene" uid="uid://ov5n86ttpjni" path="res://Scenes/Player.tscn" id="12_btgid"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lvyjx"]
-texture = ExtResource("1_0kyfw")
+texture = ExtResource("1_oe0ft")
 2:2/0 = 0
 2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:2/0 = 0
@@ -578,7 +578,7 @@ texture = ExtResource("1_0kyfw")
 35:23/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uod4i"]
-texture = ExtResource("2_xqhph")
+texture = ExtResource("2_qcrsy")
 2:2/0 = 0
 3:2/0 = 0
 4:2/0 = 0
@@ -661,94 +661,94 @@ layer_2/name = "Decorations"
 layer_2/z_index = -1
 layer_2/tile_data = PackedInt32Array(-1638380, 262145, 6, -1572844, 262145, 7, -1507308, 262145, 8, -1441772, 262145, 9, -1638379, 327681, 6, -1572843, 327681, 7, -1507307, 327681, 8, -1441771, 327681, 9, -1638378, 393217, 6, -1572842, 393217, 7, -1507306, 393217, 8, -1441770, 393217, 9, -1572841, 458753, 7, -1507305, 458753, 8, -1441769, 458753, 9, -1638361, 262145, 6, -1572825, 262145, 7, -1507289, 262145, 8, -1441753, 262145, 9, -1638360, 327681, 6, -1572824, 327681, 7, -1507288, 327681, 8, -1441752, 327681, 9, -1638359, 393217, 6, -1572823, 393217, 7, -1507287, 393217, 8, -1441751, 393217, 9, -1572822, 458753, 7, -1507286, 458753, 8, -1441750, 458753, 9, -2162687, 262145, 6, -2097151, 262145, 7, -2031615, 262145, 8, -1966079, 262145, 9, -2162686, 327681, 6, -2097150, 327681, 7, -2031614, 327681, 8, -1966078, 327681, 9, -2162685, 393217, 6, -2097149, 393217, 7, -2031613, 393217, 8, -1966077, 393217, 9, -2097148, 458753, 7, -2031612, 458753, 8, -1966076, 458753, 9, -2097196, 262145, 6, -2031660, 262145, 7, -1966124, 262145, 8, -1900588, 262145, 9, -2097195, 327681, 6, -2031659, 327681, 7, -1966123, 327681, 8, -1900587, 327681, 9, -2097194, 393217, 6, -2031658, 393217, 7, -1966122, 393217, 8, -1900586, 393217, 9, -2031657, 458753, 7, -1966121, 458753, 8, -1900585, 458753, 9, -2097210, 524289, 6, -2031674, 524289, 7, -1966138, 524289, 8, -1900602, 524289, 9, -2097209, 589825, 6, -2031673, 589825, 7, -1966137, 589825, 8, -1900601, 589825, 9, -2097208, 655361, 6, -2031672, 655361, 7, -1966136, 655361, 8, -1900600, 655361, 9, -2031671, 720897, 7, -1966135, 720897, 8, -1900599, 720897, 9, -327628, 524289, 6, -262092, 524289, 7, -196556, 524289, 8, -131020, 524289, 9, -327627, 589825, 6, -262091, 589825, 7, -196555, 589825, 8, -131019, 589825, 9, -327626, 655361, 6, -262090, 655361, 7, -196554, 655361, 8, -131018, 655361, 9, -262089, 720897, 7, -196553, 720897, 8, -131017, 720897, 9, -393201, 524289, 6, -327665, 524289, 7, -262129, 524289, 8, -196593, 524289, 9, -393200, 589825, 6, -327664, 589825, 7, -262128, 589825, 8, -196592, 589825, 9, -393199, 655361, 6, -327663, 655361, 7, -262127, 655361, 8, -196591, 655361, 9, -327662, 720897, 7, -262126, 720897, 8, -196590, 720897, 9, -524264, 131073, 2, -458728, 131073, 3, -393192, 131073, 4, -327656, 131073, 5, -262120, 131073, 6, -196584, 131073, 7, -524263, 196609, 2, -458727, 196609, 3, -393191, 196609, 4, -327655, 196609, 5, -262119, 196609, 6, -196583, 196609, 7, -1638436, 131073, 2, -1572900, 131073, 6, -1638435, 196609, 2, -1572899, 196609, 6, -1507364, 131073, 7, -1507363, 196609, 7, -2228178, 131073, 2, -2162642, 131073, 3, -2228177, 196609, 2, -2162641, 196609, 3, -2097106, 131073, 8, -2031570, 131073, 9, -2097105, 196609, 8, -2031569, 196609, 9, -2162693, 131073, 2, -2097157, 131073, 3, -2031621, 131073, 8, -1966085, 131073, 9, -2162692, 196609, 2, -2097156, 196609, 3, -2031620, 196609, 8, -1966084, 196609, 9, -131023, 131073, 2, -131022, 196609, 2, -65487, 131073, 6, 49, 131073, 7, -65486, 196609, 6, 50, 196609, 7)
 
-[node name="Diamond" parent="." instance=ExtResource("8_ujnj6")]
+[node name="Diamond" parent="." instance=ExtResource("8_f3ps0")]
 position = Vector2(87, 22)
 
-[node name="Diamond2" parent="." instance=ExtResource("8_ujnj6")]
+[node name="Diamond2" parent="." instance=ExtResource("8_f3ps0")]
 position = Vector2(42, -138)
 
-[node name="Diamond3" parent="." instance=ExtResource("8_ujnj6")]
+[node name="Diamond3" parent="." instance=ExtResource("8_f3ps0")]
 position = Vector2(-222, -201)
 
-[node name="Diamond4" parent="." instance=ExtResource("8_ujnj6")]
+[node name="Diamond4" parent="." instance=ExtResource("8_f3ps0")]
 position = Vector2(-297, -266)
 
-[node name="Diamond5" parent="." instance=ExtResource("8_ujnj6")]
+[node name="Diamond5" parent="." instance=ExtResource("8_f3ps0")]
 position = Vector2(-466, -329)
 
-[node name="Diamond6" parent="." instance=ExtResource("8_ujnj6")]
+[node name="Diamond6" parent="." instance=ExtResource("8_f3ps0")]
 position = Vector2(-673, -329)
 
-[node name="Diamond7" parent="." instance=ExtResource("8_ujnj6")]
+[node name="Diamond7" parent="." instance=ExtResource("8_f3ps0")]
 position = Vector2(-786, -330)
 
-[node name="Diamond8" parent="." instance=ExtResource("8_ujnj6")]
+[node name="Diamond8" parent="." instance=ExtResource("8_f3ps0")]
 position = Vector2(-898, -329)
 
-[node name="Diamond11" parent="." instance=ExtResource("8_ujnj6")]
+[node name="Diamond11" parent="." instance=ExtResource("8_f3ps0")]
 position = Vector2(-1021, -456)
 
-[node name="Diamond12" parent="." instance=ExtResource("8_ujnj6")]
+[node name="Diamond12" parent="." instance=ExtResource("8_f3ps0")]
 position = Vector2(-898, -456)
 
-[node name="Diamond13" parent="." instance=ExtResource("8_ujnj6")]
+[node name="Diamond13" parent="." instance=ExtResource("8_f3ps0")]
 position = Vector2(-786, -456)
 
-[node name="Diamond14" parent="." instance=ExtResource("8_ujnj6")]
+[node name="Diamond14" parent="." instance=ExtResource("8_f3ps0")]
 position = Vector2(-673, -456)
 
-[node name="Diamond15" parent="." instance=ExtResource("8_ujnj6")]
+[node name="Diamond15" parent="." instance=ExtResource("8_f3ps0")]
 position = Vector2(-265, -458)
 
-[node name="Diamond16" parent="." instance=ExtResource("8_ujnj6")]
+[node name="Diamond16" parent="." instance=ExtResource("8_f3ps0")]
 position = Vector2(10, -313)
 
-[node name="Diamond17" parent="." instance=ExtResource("8_ujnj6")]
+[node name="Diamond17" parent="." instance=ExtResource("8_f3ps0")]
 position = Vector2(94, -456)
 
-[node name="Diamond18" parent="." instance=ExtResource("8_ujnj6")]
+[node name="Diamond18" parent="." instance=ExtResource("8_f3ps0")]
 position = Vector2(209, -312)
 
-[node name="Diamond19" parent="." instance=ExtResource("8_ujnj6")]
+[node name="Diamond19" parent="." instance=ExtResource("8_f3ps0")]
 position = Vector2(200, -407)
 
-[node name="Diamond20" parent="." instance=ExtResource("8_ujnj6")]
+[node name="Diamond20" parent="." instance=ExtResource("8_f3ps0")]
 position = Vector2(744, -388)
 
-[node name="Diamond21" parent="." instance=ExtResource("8_ujnj6")]
+[node name="Diamond21" parent="." instance=ExtResource("8_f3ps0")]
 position = Vector2(658, 167)
 
-[node name="Diamond22" parent="." instance=ExtResource("8_ujnj6")]
+[node name="Diamond22" parent="." instance=ExtResource("8_f3ps0")]
 position = Vector2(811, 168)
 
-[node name="Diamond23" parent="." instance=ExtResource("8_ujnj6")]
+[node name="Diamond23" parent="." instance=ExtResource("8_f3ps0")]
 position = Vector2(857, 23)
 
-[node name="Diamond9" parent="." instance=ExtResource("8_ujnj6")]
+[node name="Diamond9" parent="." instance=ExtResource("8_f3ps0")]
 position = Vector2(-727, -171)
 
-[node name="Diamond10" parent="." instance=ExtResource("8_ujnj6")]
+[node name="Diamond10" parent="." instance=ExtResource("8_f3ps0")]
 position = Vector2(-944, 7)
 
-[node name="Pig" parent="." instance=ExtResource("9_y0a46")]
+[node name="Pig" parent="." instance=ExtResource("9_70fed")]
 position = Vector2(535, -143)
 
-[node name="Pig2" parent="." instance=ExtResource("9_y0a46")]
+[node name="Pig2" parent="." instance=ExtResource("9_70fed")]
 position = Vector2(739, 162)
 
-[node name="Pig3" parent="." instance=ExtResource("9_y0a46")]
+[node name="Pig3" parent="." instance=ExtResource("9_70fed")]
 position = Vector2(509, -462)
 
-[node name="Pig4" parent="." instance=ExtResource("9_y0a46")]
+[node name="Pig4" parent="." instance=ExtResource("9_70fed")]
 position = Vector2(163, -143)
 
-[node name="Pig5" parent="." instance=ExtResource("9_y0a46")]
+[node name="Pig5" parent="." instance=ExtResource("9_70fed")]
 position = Vector2(-813, 1)
 
-[node name="Pig6" parent="." instance=ExtResource("9_y0a46")]
+[node name="Pig6" parent="." instance=ExtResource("9_70fed")]
 position = Vector2(-398, -463)
 
-[node name="Player" parent="." instance=ExtResource("12_d25np")]
+[node name="Player" parent="." instance=ExtResource("12_btgid")]
 position = Vector2(-2, 16)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
@@ -760,58 +760,58 @@ zoom = Vector2(1.7, 1.7)
 position_smoothing_enabled = true
 position_smoothing_speed = 6.0
 
-[node name="DoorExit" parent="." instance=ExtResource("6_myv8h")]
+[node name="DoorExit" parent="." instance=ExtResource("6_mmpcr")]
 position = Vector2(984, 4)
 
-[node name="Door" parent="." instance=ExtResource("7_kr32u")]
+[node name="Door" parent="." instance=ExtResource("7_jwlby")]
 position = Vector2(-8, 5)
 
-[node name="LevelNumber" parent="." instance=ExtResource("8_ry8qe")]
+[node name="LevelNumber" parent="." instance=ExtResource("8_nuqet")]
 position = Vector2(-9, -33)
 frame = 2
 
-[node name="Spike" parent="." instance=ExtResource("9_4snj6")]
+[node name="Spike" parent="." instance=ExtResource("9_sq1qk")]
 position = Vector2(268, 24)
 
-[node name="Spike2" parent="." instance=ExtResource("9_4snj6")]
+[node name="Spike2" parent="." instance=ExtResource("9_sq1qk")]
 position = Vector2(-876, 8)
 
-[node name="Spike3" parent="." instance=ExtResource("9_4snj6")]
+[node name="Spike3" parent="." instance=ExtResource("9_sq1qk")]
 position = Vector2(-420, -328)
 
-[node name="Spike4" parent="." instance=ExtResource("9_4snj6")]
+[node name="Spike4" parent="." instance=ExtResource("9_sq1qk")]
 position = Vector2(-506, -328)
 
-[node name="Spike5" parent="." instance=ExtResource("9_4snj6")]
+[node name="Spike5" parent="." instance=ExtResource("9_sq1qk")]
 position = Vector2(-1023, -328)
 
-[node name="Spike6" parent="." instance=ExtResource("9_4snj6")]
+[node name="Spike6" parent="." instance=ExtResource("9_sq1qk")]
 position = Vector2(-1061, -456)
 
-[node name="Spike7" parent="." instance=ExtResource("9_4snj6")]
+[node name="Spike7" parent="." instance=ExtResource("9_sq1qk")]
 position = Vector2(-555, -456)
 
-[node name="Spike8" parent="." instance=ExtResource("9_4snj6")]
+[node name="Spike8" parent="." instance=ExtResource("9_sq1qk")]
 position = Vector2(-455, -456)
 
-[node name="Spike9" parent="." instance=ExtResource("9_4snj6")]
+[node name="Spike9" parent="." instance=ExtResource("9_sq1qk")]
 position = Vector2(-329, -456)
 
-[node name="Spike10" parent="." instance=ExtResource("9_4snj6")]
+[node name="Spike10" parent="." instance=ExtResource("9_sq1qk")]
 position = Vector2(-197, -456)
 
-[node name="Spike11" parent="." instance=ExtResource("9_4snj6")]
+[node name="Spike11" parent="." instance=ExtResource("9_sq1qk")]
 position = Vector2(-97, -456)
 
-[node name="Spike12" parent="." instance=ExtResource("9_4snj6")]
+[node name="Spike12" parent="." instance=ExtResource("9_sq1qk")]
 position = Vector2(72, -437)
 rotation = -1.5708
 
-[node name="Spike13" parent="." instance=ExtResource("9_4snj6")]
+[node name="Spike13" parent="." instance=ExtResource("9_sq1qk")]
 position = Vector2(249, -312)
 
-[node name="Spike14" parent="." instance=ExtResource("9_4snj6")]
+[node name="Spike14" parent="." instance=ExtResource("9_sq1qk")]
 position = Vector2(291, -456)
 
-[node name="Spike15" parent="." instance=ExtResource("9_4snj6")]
+[node name="Spike15" parent="." instance=ExtResource("9_sq1qk")]
 position = Vector2(565, -456)
