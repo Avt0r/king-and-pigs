@@ -244,15 +244,15 @@ scale = Vector2(1.5, 1.5)
 
 [node name="Resume" type="Button" parent="Menu/VBoxContainer"]
 layout_mode = 2
-text = "Resume"
-
-[node name="ToMenu" type="Button" parent="Menu/VBoxContainer"]
-layout_mode = 2
-text = "Menu"
+text = "Продолжить"
 
 [node name="Reload" type="Button" parent="Menu/VBoxContainer"]
 layout_mode = 2
-text = "Reload"
+text = "Заново"
+
+[node name="ToMenu" type="Button" parent="Menu/VBoxContainer"]
+layout_mode = 2
+text = "Меню"
 
 [node name="Dead" type="Control" parent="."]
 layout_mode = 1
@@ -279,14 +279,14 @@ scale = Vector2(1.5, 1.5)
 
 [node name="Reload" type="Button" parent="Dead/VBoxContainer"]
 layout_mode = 2
-text = "Reload"
+text = "Заново"
 
 [node name="ToMenu" type="Button" parent="Dead/VBoxContainer"]
 layout_mode = 2
-text = "Menu"
+text = "Меню"
 
 [connection signal="pressed" from="Menu/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="Menu/VBoxContainer/ToMenu" to="." method="_to_main_menu"]
 [connection signal="pressed" from="Menu/VBoxContainer/Reload" to="." method="_on_reload_pressed"]
+[connection signal="pressed" from="Menu/VBoxContainer/ToMenu" to="." method="_to_main_menu"]
 [connection signal="pressed" from="Dead/VBoxContainer/Reload" to="." method="_on_reload_pressed"]
 [connection signal="pressed" from="Dead/VBoxContainer/ToMenu" to="." method="_to_main_menu"]
