@@ -1,11 +1,11 @@
 [gd_scene load_steps=16 format=3 uid="uid://bcnswvaj2uhro"]
 
 [ext_resource type="Script" path="res://Scripts/MainMenu.gd" id="1_r4eeu"]
-[ext_resource type="Texture2D" uid="uid://cwk0id0opn4hq" path="res://Sprites/King and Pigs/Kings and Pigs.png" id="2_p82u1"]
+[ext_resource type="Texture2D" uid="uid://cwk0id0opn4hq" path="res://Sprites/Kings and Pigs/Kings and Pigs.png" id="2_p82u1"]
 [ext_resource type="Script" path="res://Scripts/MainMenuDoor.gd" id="3_nbh2u"]
-[ext_resource type="Texture2D" uid="uid://ddtrj3fmws5yy" path="res://Sprites/King and Pigs/11-Door/Closiong (46x56).png" id="4_vcif0"]
-[ext_resource type="Texture2D" uid="uid://dyn1g3rry8k1i" path="res://Sprites/King and Pigs/11-Door/Idle.png" id="5_0x826"]
-[ext_resource type="Texture2D" uid="uid://xu1x1omih7cw" path="res://Sprites/King and Pigs/11-Door/Opening (46x56).png" id="6_rf87t"]
+[ext_resource type="Texture2D" uid="uid://ddtrj3fmws5yy" path="res://Sprites/Kings and Pigs/11-Door/Closiong (46x56).png" id="4_vcif0"]
+[ext_resource type="Texture2D" uid="uid://dyn1g3rry8k1i" path="res://Sprites/Kings and Pigs/11-Door/Idle.png" id="5_0x826"]
+[ext_resource type="Texture2D" uid="uid://xu1x1omih7cw" path="res://Sprites/Kings and Pigs/11-Door/Opening (46x56).png" id="6_rf87t"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v1l5d"]
 atlas = ExtResource("4_vcif0")

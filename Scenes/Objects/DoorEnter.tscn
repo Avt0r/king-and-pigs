@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bxugi8erbvh2q"]
 
-[ext_resource type="Texture2D" uid="uid://ddtrj3fmws5yy" path="res://Sprites/King and Pigs/11-Door/Closiong (46x56).png" id="1_uadvo"]
+[ext_resource type="Texture2D" uid="uid://ddtrj3fmws5yy" path="res://Sprites/Kings and Pigs/11-Door/Closiong (46x56).png" id="1_uadvo"]
 [ext_resource type="Script" path="res://Scripts/Door.gd" id="2_8s5vv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y6osf"]

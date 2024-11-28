@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://ov5n86ttpjni"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_ddcx0"]
-[ext_resource type="Texture2D" uid="uid://dpdw8yfa5hvng" path="res://Sprites/King and Pigs/01-King Human/King-Human.png" id="7_eoxfo"]
+[ext_resource type="Texture2D" uid="uid://dpdw8yfa5hvng" path="res://Sprites/Kings and Pigs/01-King Human/King-Human.png" id="7_eoxfo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y5oyb"]
 size = Vector2(21, 26)

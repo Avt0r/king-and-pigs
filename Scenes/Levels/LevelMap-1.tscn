@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://f63wl2pq616l"]
 
-[ext_resource type="Texture2D" uid="uid://b4av320h1sv8e" path="res://Sprites/King and Pigs/14-TileSets/Terrain (32x32).png" id="1_baj4i"]
-[ext_resource type="Texture2D" uid="uid://bwy3ykqqyw2y4" path="res://Sprites/King and Pigs/14-TileSets/Decorations (32x32).png" id="2_fnuba"]
+[ext_resource type="Texture2D" uid="uid://b4av320h1sv8e" path="res://Sprites/Kings and Pigs/14-TileSets/Terrain (32x32).png" id="1_baj4i"]
+[ext_resource type="Texture2D" uid="uid://bwy3ykqqyw2y4" path="res://Sprites/Kings and Pigs/14-TileSets/Decorations (32x32).png" id="2_fnuba"]
 [ext_resource type="PackedScene" uid="uid://dgflrg2mjgqtd" path="res://Scenes/Objects/DoorExit.tscn" id="3_cpd16"]
 [ext_resource type="PackedScene" uid="uid://bxugi8erbvh2q" path="res://Scenes/Objects/DoorEnter.tscn" id="4_3n10b"]
 [ext_resource type="PackedScene" uid="uid://cdyuqtfeagu4b" path="res://Scenes/Objects/Box.tscn" id="4_ybp4c"]

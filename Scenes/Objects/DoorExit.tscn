@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://dgflrg2mjgqtd"]
 
-[ext_resource type="Texture2D" uid="uid://dyn1g3rry8k1i" path="res://Sprites/King and Pigs/11-Door/Idle.png" id="1_ddihl"]
-[ext_resource type="Texture2D" uid="uid://xu1x1omih7cw" path="res://Sprites/King and Pigs/11-Door/Opening (46x56).png" id="2_isev7"]
+[ext_resource type="Texture2D" uid="uid://dyn1g3rry8k1i" path="res://Sprites/Kings and Pigs/11-Door/Idle.png" id="1_ddihl"]
+[ext_resource type="Texture2D" uid="uid://xu1x1omih7cw" path="res://Sprites/Kings and Pigs/11-Door/Opening (46x56).png" id="2_isev7"]
 [ext_resource type="Script" path="res://Scripts/DoorExit.gd" id="3_dut37"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y07t6"]

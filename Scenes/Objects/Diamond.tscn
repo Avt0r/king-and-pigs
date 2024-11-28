@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://bsc7i3x65abpo"]
 
 [ext_resource type="Script" path="res://Scripts/Diamond.gd" id="1_qaq16"]
-[ext_resource type="Texture2D" uid="uid://wpcr7cmeehxa" path="res://Sprites/King and Pigs/12-Live and Coins/Big Diamond Idle (18x14).png" id="2_vyrxo"]
+[ext_resource type="Texture2D" uid="uid://wpcr7cmeehxa" path="res://Sprites/Kings and Pigs/12-Live and Coins/Big Diamond Idle (18x14).png" id="2_vyrxo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pg1jw"]
 atlas = ExtResource("2_vyrxo")

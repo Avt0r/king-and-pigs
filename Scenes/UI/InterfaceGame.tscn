@@ -1,11 +1,11 @@
 [gd_scene load_steps=27 format=3 uid="uid://choia3yvhsti"]
 
-[ext_resource type="Texture2D" uid="uid://bm6h3teyitvsl" path="res://Sprites/King and Pigs/12-Live and Coins/Live Bar.png" id="1_j7lro"]
+[ext_resource type="Texture2D" uid="uid://bm6h3teyitvsl" path="res://Sprites/Kings and Pigs/12-Live and Coins/Live Bar.png" id="1_j7lro"]
 [ext_resource type="Script" path="res://Scripts/InterfaceGame.gd" id="1_uevu2"]
-[ext_resource type="Texture2D" uid="uid://dvqn01x4cftvq" path="res://Sprites/King and Pigs/12-Live and Coins/Small Diamond (18x14).png" id="2_1yrn3"]
-[ext_resource type="Texture2D" uid="uid://caow0vu6md3wk" path="res://Sprites/King and Pigs/12-Live and Coins/Small Heart Hit (18x14).png" id="3_av86x"]
-[ext_resource type="Texture2D" uid="uid://csixbdjmgub8s" path="res://Sprites/King and Pigs/12-Live and Coins/Numbers (6x8).png" id="3_xpamt"]
-[ext_resource type="Texture2D" uid="uid://dsbejyluufneq" path="res://Sprites/King and Pigs/12-Live and Coins/Small Heart Idle (18x14).png" id="4_wrrd1"]
+[ext_resource type="Texture2D" uid="uid://dvqn01x4cftvq" path="res://Sprites/Kings and Pigs/12-Live and Coins/Small Diamond (18x14).png" id="2_1yrn3"]
+[ext_resource type="Texture2D" uid="uid://caow0vu6md3wk" path="res://Sprites/Kings and Pigs/12-Live and Coins/Small Heart Hit (18x14).png" id="3_av86x"]
+[ext_resource type="Texture2D" uid="uid://csixbdjmgub8s" path="res://Sprites/Kings and Pigs/12-Live and Coins/Numbers (6x8).png" id="3_xpamt"]
+[ext_resource type="Texture2D" uid="uid://dsbejyluufneq" path="res://Sprites/Kings and Pigs/12-Live and Coins/Small Heart Idle (18x14).png" id="4_wrrd1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nisnk"]
 atlas = ExtResource("3_av86x")

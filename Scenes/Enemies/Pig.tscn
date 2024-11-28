@@ -1,10 +1,10 @@
 [gd_scene load_steps=32 format=3 uid="uid://ce1ttcs50dgvg"]
 
 [ext_resource type="Script" path="res://Scripts/Pig.gd" id="1_v863t"]
-[ext_resource type="Texture2D" uid="uid://bnsrtbbe4dcit" path="res://Sprites/King and Pigs/03-Pig/Dead (34x28).png" id="2_amq5p"]
-[ext_resource type="Texture2D" uid="uid://04hn4y2ascu2" path="res://Sprites/King and Pigs/03-Pig/Hit (34x28).png" id="3_6it3p"]
-[ext_resource type="Texture2D" uid="uid://fuvx2x6xkf2j" path="res://Sprites/King and Pigs/03-Pig/Idle (34x28).png" id="4_1ms6j"]
-[ext_resource type="Texture2D" uid="uid://dc3adrfkro6ku" path="res://Sprites/King and Pigs/03-Pig/Run (34x28).png" id="5_dxpmj"]
+[ext_resource type="Texture2D" uid="uid://bnsrtbbe4dcit" path="res://Sprites/Kings and Pigs/03-Pig/Dead (34x28).png" id="2_amq5p"]
+[ext_resource type="Texture2D" uid="uid://04hn4y2ascu2" path="res://Sprites/Kings and Pigs/03-Pig/Hit (34x28).png" id="3_6it3p"]
+[ext_resource type="Texture2D" uid="uid://fuvx2x6xkf2j" path="res://Sprites/Kings and Pigs/03-Pig/Idle (34x28).png" id="4_1ms6j"]
+[ext_resource type="Texture2D" uid="uid://dc3adrfkro6ku" path="res://Sprites/Kings and Pigs/03-Pig/Run (34x28).png" id="5_dxpmj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ioevs"]
 size = Vector2(20, 18)

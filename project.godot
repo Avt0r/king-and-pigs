@@ -14,7 +14,7 @@ config/name="Kings and Pigs"
 config/version="1"
 run/main_scene="res://Scenes/UI/MainMenu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
-boot_splash/image="res://Sprites/King and Pigs/Kings and Pigs.png"
+boot_splash/image="res://Sprites/Kings and Pigs/Kings and Pigs.png"
 boot_splash/fullsize=false
 boot_splash/use_filter=false
 config/icon="res://icon.svg"
@@ -23,6 +23,8 @@ config/icon="res://icon.svg"
 
 LevelManager="*res://Scripts/LevelManager.gd"
 WebBus="*res://addons/WebBusPlugin/WebBus.gd"
+Global="*res://Scenes/Global.tscn"
+DataManager="*res://Scripts/DataManager.gd"
 
 [display]
 

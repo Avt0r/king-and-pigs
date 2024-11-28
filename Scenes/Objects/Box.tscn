@@ -1,13 +1,13 @@
 [gd_scene load_steps=11 format=3 uid="uid://cdyuqtfeagu4b"]
 
 [ext_resource type="Script" path="res://Scripts/Box.gd" id="1_5o8tf"]
-[ext_resource type="Texture2D" uid="uid://cr2ngy718vnjb" path="res://Sprites/King and Pigs/08-Box/Idle.png" id="2_i6vja"]
-[ext_resource type="Texture2D" uid="uid://gy8den32oy0t" path="res://Sprites/King and Pigs/08-Box/Hit.png" id="2_rv8w0"]
-[ext_resource type="Texture2D" uid="uid://caf71iv1goq3l" path="res://Sprites/King and Pigs/08-Box/Idle2.png" id="2_vxx3v"]
-[ext_resource type="Texture2D" uid="uid://cp884i3sw4p0v" path="res://Sprites/King and Pigs/08-Box/Idle3.png" id="3_ioo4g"]
-[ext_resource type="Texture2D" uid="uid://skhlqoepc52r" path="res://Sprites/King and Pigs/08-Box/Idle4.png" id="4_r5dha"]
-[ext_resource type="Texture2D" uid="uid://cxwukv8rs66xk" path="res://Sprites/King and Pigs/08-Box/Idle5.png" id="5_q372f"]
-[ext_resource type="Texture2D" uid="uid://kujqbiiut4a8" path="res://Sprites/King and Pigs/08-Box/Idle6.png" id="6_rg4l2"]
+[ext_resource type="Texture2D" uid="uid://cr2ngy718vnjb" path="res://Sprites/Kings and Pigs/08-Box/Idle.png" id="2_i6vja"]
+[ext_resource type="Texture2D" uid="uid://gy8den32oy0t" path="res://Sprites/Kings and Pigs/08-Box/Hit.png" id="2_rv8w0"]
+[ext_resource type="Texture2D" uid="uid://caf71iv1goq3l" path="res://Sprites/Kings and Pigs/08-Box/Idle2.png" id="2_vxx3v"]
+[ext_resource type="Texture2D" uid="uid://cp884i3sw4p0v" path="res://Sprites/Kings and Pigs/08-Box/Idle3.png" id="3_ioo4g"]
+[ext_resource type="Texture2D" uid="uid://skhlqoepc52r" path="res://Sprites/Kings and Pigs/08-Box/Idle4.png" id="4_r5dha"]
+[ext_resource type="Texture2D" uid="uid://cxwukv8rs66xk" path="res://Sprites/Kings and Pigs/08-Box/Idle5.png" id="5_q372f"]
+[ext_resource type="Texture2D" uid="uid://kujqbiiut4a8" path="res://Sprites/Kings and Pigs/08-Box/Idle6.png" id="6_rg4l2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hb4p1"]
 animations = [{
