@@ -3,9 +3,21 @@ extends Node2D
 @onready var window_welcome = $CanvasLayer/MenuWelcome
 @onready var window_choose_level = $CanvasLayer/MenuChooseLevel
 
+var levels = {}
+
 func _ready() -> void:
 	window_welcome.show()
 	window_choose_level.hide()
+	
+	DataManager._load()
+	
+	levels = $CanvasLayer/MenuChooseLevel/GridContainer.get_children()
+	
+	if DataManager.last_completed_level <= 0:
+		levels[0].disabled = false
+	else:
+		for i in DataManager.last_completed_level:
+			levels[0].disabled = false
 
 func _on_control_gui_input(_event: InputEvent) -> void:
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
