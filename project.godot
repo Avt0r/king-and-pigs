@@ -22,7 +22,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 LevelManager="*res://Scripts/LevelManager.gd"
-WebBus="*res://addons/WebBusPlugin/WebBus.gd"
+WebBus="res://addons/WebBusPlugin/WebBus.gd"
 Global="*res://Scenes/Global.tscn"
 DataManager="*res://Scripts/DataManager.gd"
 
