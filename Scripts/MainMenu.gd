@@ -17,7 +17,7 @@ func _ready() -> void:
 		levels[0].disabled = false
 	else:
 		for i in DataManager.last_completed_level:
-			levels[0].disabled = false
+			levels[i].disabled = false
 
 func _on_control_gui_input(_event: InputEvent) -> void:
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):

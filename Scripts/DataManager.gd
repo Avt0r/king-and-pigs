@@ -1,7 +1,7 @@
 extends Node
 
 var last_completed_level = 0
-var diamonds_collected = {}
+var diamonds_collected = [0,0,0,0,0]
 
 # Загрузка сохранённых данных.
 func _load():
@@ -12,16 +12,16 @@ func _load():
 		return
 	
 	save_file.get_var(last_completed_level)
-	for i in last_completed_level - 2:
-		save_file.get_var(diamonds_collected[i + 1])
+	#for i in last_completed_level - 2:
+		#save_file.get_var(diamonds_collected[i + 1])
 
 # Фиксация завершения уровня и количество собранных алмазов.
 func _level_complete() -> void:
 	last_completed_level = max(last_completed_level, LevelManager.current_level_number)
-	if LevelManager.current_level_number in diamonds_collected:
-		diamonds_collected[LevelManager.current_level_number] = max(LevelManager.current_level.diamonds,diamonds_collected[LevelManager.current_level_number])
-	else:
-		diamonds_collected[LevelManager.current_level_number] = LevelManager.current_level.diamonds
+	#if LevelManager.current_level_number in diamonds_collected:
+		#diamonds_collected[LevelManager.current_level_number] = max(LevelManager.current_level.diamonds,diamonds_collected[LevelManager.current_level_number])
+	#else:
+		#diamonds_collected[LevelManager.current_level_number] = LevelManager.current_level.diamonds
 	save_game()
 
 # Функция сохранения прогресса игры.
@@ -33,8 +33,8 @@ func save_game() -> void:
 		return
 	
 	save_file.store_var(last_completed_level)
-	for i in diamonds_collected.values():
-		save_file.store_var(i)
+	#for i in diamonds_collected.values():
+		#save_file.store_var(i)
 	
 	#var data_to_save = {
 		#"last_completed_level": last_completed_level,
