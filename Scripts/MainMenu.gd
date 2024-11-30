@@ -18,6 +18,10 @@ func _ready() -> void:
 	else:
 		for i in DataManager.last_completed_level:
 			levels[i].disabled = false
+			
+			if i == DataManager.levels_count - 1: break
+			
+			levels[i+1].disabled = false
 	
 	for l in levels.size()-1:
 		levels[l].get_child(0).text = str(DataManager.diamonds_collected[l])+"/"+str(DataManager.diamonds_all[l])

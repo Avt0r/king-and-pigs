@@ -41,3 +41,6 @@ func save_game() -> void:
 		save_file.store_var(diamonds_collected[i])
 	
 	save_file.close()
+
+func _wipe() -> void:
+	DirAccess.remove_absolute("user://savegame.save")
