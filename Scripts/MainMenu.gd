@@ -23,7 +23,7 @@ func _ready() -> void:
 			
 			levels[i+1].disabled = false
 	
-	for l in levels.size()-1:
+	for l in levels.size():
 		levels[l].get_child(0).text = str(DataManager.diamonds_collected[l])+"/"+str(DataManager.diamonds_all[l])
 
 func _on_control_gui_input(_event: InputEvent) -> void:

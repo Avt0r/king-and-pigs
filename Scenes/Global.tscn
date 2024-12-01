@@ -1,10 +1,38 @@
-[gd_scene load_steps=2 format=3 uid="uid://bwpij16p7wx2x"]
+[gd_scene load_steps=3 format=3 uid="uid://bwpij16p7wx2x"]
 
 [ext_resource type="AudioStream" uid="uid://cqqrfnqjciurg" path="res://Music/Mainmusic.mp3" id="1_fh85t"]
 
+[sub_resource type="GDScript" id="GDScript_7moik"]
+resource_name = "Global"
+script/source = "extends Node
+
+var callback_rewarded_ad = JavaScriptBridge.create_callback(_rewarded_ad)
+var callback_ad = JavaScriptBridge.create_callback(_ad)
+@onready var win = JavaScriptBridge.get_interface(\"window\")
+
+func js_show_ad():
+	win.ShowAd(callback_ad)
+# Здесь можно приостановить музыку / звуки
+
+func js_show_rewarded_ad():
+	win.ShowAdRewardedVideo(callback_rewarded_ad)
+# Здесь можно приостановить музыку / звуки
+
+func _rewarded_ad(args):
+	LevelManager.current_level.map.get_node(\"Player\")._on_heal()
+	LevelManager.current_level.interface._on_resume_pressed()
+# Здесь можно возобновить музыку / звуки
+
+func _ad(args):
+	print(args[0])
+# Здесь можно возобновить музыку / звуки
+"
+
 [node name="Global" type="Node"]
+script = SubResource("GDScript_7moik")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_fh85t")
-volume_db = -20.0
+volume_db = -25.0
+autoplay = true
 parameters/looping = true
