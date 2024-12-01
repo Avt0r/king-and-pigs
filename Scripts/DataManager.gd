@@ -17,7 +17,7 @@ func _load():
 	# Получаем данные.
 	last_completed_level = save_file.get_var(last_completed_level)
 	
-	for i in (diamonds_collected.size() - 1):
+	for i in (diamonds_collected.size()):
 		diamonds_collected[i] = save_file.get_var(diamonds_collected[i])
 
 # Фиксация завершения уровня и количество собранных алмазов.
