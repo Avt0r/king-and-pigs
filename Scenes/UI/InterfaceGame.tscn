@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://choia3yvhsti"]
+[gd_scene load_steps=28 format=3 uid="uid://choia3yvhsti"]
 
 [ext_resource type="Texture2D" uid="uid://bm6h3teyitvsl" path="res://Sprites/Kings and Pigs/12-Live and Coins/Live Bar.png" id="1_j7lro"]
 [ext_resource type="Script" path="res://Scripts/InterfaceGame.gd" id="1_uevu2"]
@@ -154,6 +154,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="LabelSettings" id="LabelSettings_rxsys"]
+font_size = 50
+
 [node name="Interface" type="Control"]
 process_mode = 3
 custom_minimum_size = Vector2(1152, 648)
@@ -240,18 +243,21 @@ offset_right = 35.0
 offset_bottom = 33.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(1.5, 1.5)
+alignment = 1
 
 [node name="Resume" type="Button" parent="Menu/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 text = "Продолжить"
 
 [node name="Reload" type="Button" parent="Menu/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 text = "Заново"
 
 [node name="ToMenu" type="Button" parent="Menu/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 text = "Меню"
 
 [node name="Dead" type="Control" parent="."]
@@ -262,6 +268,21 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Label" type="Label" parent="Dead"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -134.5
+offset_bottom = -65.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "ВЫ УМЕРЛИ!"
+label_settings = SubResource("LabelSettings_rxsys")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="VBoxContainer" type="VBoxContainer" parent="Dead"]
 layout_mode = 1
 anchors_preset = 8
@@ -269,20 +290,22 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -30.5
+offset_left = -33.5
 offset_top = -33.0
-offset_right = 30.5
+offset_right = 33.5
 offset_bottom = 33.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(1.5, 1.5)
+alignment = 1
 
 [node name="Reload" type="Button" parent="Dead/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 text = "Заново"
 
 [node name="ToMenu" type="Button" parent="Dead/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 text = "Меню"
 
 [connection signal="pressed" from="Menu/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
