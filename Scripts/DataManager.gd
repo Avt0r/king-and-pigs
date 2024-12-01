@@ -24,7 +24,7 @@ func _load():
 func _level_complete() -> void:
 	last_completed_level = max(last_completed_level, LevelManager.current_level_number)
 	
-	diamonds_collected[LevelManager.current_level_number-1] = max(LevelManager.current_level.diamonds,diamonds_collected[LevelManager.current_level_number]-1)
+	diamonds_collected[LevelManager.current_level_number-1] = max(LevelManager.current_level.diamonds,diamonds_collected[LevelManager.current_level_number-1])
 	save_game()
 
 # Функция сохранения прогресса игры.

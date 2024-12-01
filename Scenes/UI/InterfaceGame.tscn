@@ -290,13 +290,18 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -33.5
-offset_top = -33.0
-offset_right = 33.5
-offset_bottom = 33.0
+offset_left = -147.0
+offset_top = -59.0
+offset_right = 147.0
+offset_bottom = 99.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
+
+[node name="AddHP" type="Button" parent="Dead/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Получить 1 сердце"
 
 [node name="Reload" type="Button" parent="Dead/VBoxContainer"]
 layout_mode = 2
@@ -311,5 +316,6 @@ text = "Меню"
 [connection signal="pressed" from="Menu/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="Menu/VBoxContainer/Reload" to="." method="_on_reload_pressed"]
 [connection signal="pressed" from="Menu/VBoxContainer/ToMenu" to="." method="_to_main_menu"]
+[connection signal="pressed" from="Dead/VBoxContainer/AddHP" to="." method="_on_add_hp_pressed"]
 [connection signal="pressed" from="Dead/VBoxContainer/Reload" to="." method="_on_reload_pressed"]
 [connection signal="pressed" from="Dead/VBoxContainer/ToMenu" to="." method="_to_main_menu"]

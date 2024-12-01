@@ -94,25 +94,29 @@ func _on_deal_damage():
 func _on_hit():
 	if anim.current_animation == "In" or anim.current_animation == "Out" or anim.current_animation == "Dead": return
 	
-	if hp == 1:
+	hp -= 1
+	LevelManager.current_level.interface._hit()
+	
+	if hp == 0:
 		_on_dead()
 		return
 	
-	hp -= 1
-	LevelManager.current_level.interface._hit()
 	anim.play("Hit")
 
 func _on_heal():
-	if anim.current_animation == "In" or anim.current_animation == "Out" or anim.current_animation == "Dead": return
+	if anim.current_animation == "In" or anim.current_animation == "Out": return
 	
 	if hp == 3: return
+	
+	if hp == 0:
+		anim.play("Idle")
+		alive = true
 	
 	hp += 1
 	LevelManager.current_level.interface._heal()
 
 func _on_dead():
 	alive = false
-	LevelManager.current_level.interface._hit()
 	anim.play("Dead")
 
 func _on_out(door):

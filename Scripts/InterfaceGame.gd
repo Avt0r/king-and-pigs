@@ -63,6 +63,7 @@ func _unhandled_input(_event: InputEvent) -> void:
 
 func _on_resume_pressed() -> void:
 	window_menu.hide()
+	window_dead.hide()
 	get_tree().paused = false
 
 func _to_main_menu() -> void:
@@ -76,3 +77,6 @@ func _on_dead():
 func _on_reload_pressed() -> void:
 	get_tree().paused = false
 	get_tree().reload_current_scene()
+
+func _on_add_hp_pressed() -> void:
+	Global.js_show_rewarded_ad()
