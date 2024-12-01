@@ -37,7 +37,7 @@ func save_game() -> void:
 	
 	save_file.store_var(last_completed_level)
 	
-	for i in (diamonds_collected.size() - 1):
+	for i in (diamonds_collected.size()):
 		save_file.store_var(diamonds_collected[i])
 	
 	save_file.close()
