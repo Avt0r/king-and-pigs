@@ -9,7 +9,7 @@ func _ready() -> void:
 	window_welcome.show()
 	window_choose_level.hide()
 	
-	#Global.Data.._wipe()
+	#Global.Data._wipe()
 	
 	Global.Data._load()
 	
@@ -27,9 +27,6 @@ func _ready() -> void:
 	
 	for l in levels.size():
 		levels[l].get_child(0).text = str(Global.Data.diamonds_collected[l])+"/"+str(Global.Data.diamonds_all[l])
-	
-	Global.YandexSDK.ready()
-	Global.YandexSDK.game_start()
 
 func _on_control_gui_input(_event: InputEvent) -> void:
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):

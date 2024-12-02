@@ -14,9 +14,11 @@ script/source = "extends Node
 resource_name = "YandexSDK"
 script/source = "extends Node
 
-
 var callback_rewarded_ad = JavaScriptBridge.create_callback(_rewarded_ad)
-@onready var win = JavaScriptBridge.get_interface(\"window\")
+var win
+
+func _ready() -> void:
+	win = JavaScriptBridge.get_interface(\"window\")
 
 func ready() -> void:
 	win.Ready()
@@ -29,13 +31,10 @@ func game_stop() -> void:
 
 func show_rewarded_ad():
 	win.ShowAdRewardedVideo(callback_rewarded_ad)
-# Здесь можно приостановить музыку / звуки
 
-# args в сигнатуре метода должен быть обязательно
 func _rewarded_ad(args):
 	LevelManager.current_level.interface._on_ad_rewarded();
 	LevelManager.current_level.player._on_heal()
-# Здесь можно возобновить музыку / звуки
 "
 
 [sub_resource type="GDScript" id="GDScript_kdaxq"]
