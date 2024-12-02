@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://bwpij16p7wx2x"]
+[gd_scene load_steps=5 format=3 uid="uid://bwpij16p7wx2x"]
 
 [ext_resource type="AudioStream" uid="uid://cqqrfnqjciurg" path="res://Music/Mainmusic.mp3" id="1_fh85t"]
 
@@ -6,26 +6,86 @@
 resource_name = "Global"
 script/source = "extends Node
 
+@onready var YandexSDK = $YandexSDK
+@onready var Data = $Data
+"
+
+[sub_resource type="GDScript" id="GDScript_ssljk"]
+resource_name = "YandexSDK"
+script/source = "extends Node
+
+
 var callback_rewarded_ad = JavaScriptBridge.create_callback(_rewarded_ad)
-var callback_ad = JavaScriptBridge.create_callback(_ad)
 @onready var win = JavaScriptBridge.get_interface(\"window\")
 
-func js_show_ad():
-	win.ShowAd(callback_ad)
-# Здесь можно приостановить музыку / звуки
+func ready() -> void:
+	win.Ready()
 
-func js_show_rewarded_ad():
+func game_start() -> void:
+	win.GameStart()
+
+func game_stop() -> void:
+	win.GameStop()
+
+func show_rewarded_ad():
 	win.ShowAdRewardedVideo(callback_rewarded_ad)
 # Здесь можно приостановить музыку / звуки
 
+# args в сигнатуре метода должен быть обязательно
 func _rewarded_ad(args):
-	LevelManager.current_level.map.get_node(\"Player\")._on_heal()
-	LevelManager.current_level.interface._on_resume_pressed()
+	LevelManager.current_level.interface._on_ad_rewarded();
+	LevelManager.current_level.player._on_heal()
 # Здесь можно возобновить музыку / звуки
+"
 
-func _ad(args):
-	print(args[0])
-# Здесь можно возобновить музыку / звуки
+[sub_resource type="GDScript" id="GDScript_kdaxq"]
+resource_name = "Data"
+script/source = "extends Node
+
+var levels_count = 5
+var diamonds_all = [3,7,23,12,32]
+
+var last_completed_level = 0
+var diamonds_collected = [0,0,0,0,0]
+
+# Загрузка сохранённых данных.
+func _load():
+	var save_file = FileAccess.open(\"user://savegame.save\", FileAccess.READ)
+	
+	if save_file == null or not save_file.is_open():
+		print(\"Ошибка при открытии файла\")
+		return
+	
+	# Получаем данные.
+	last_completed_level = save_file.get_var(last_completed_level)
+	
+	for i in diamonds_collected.size():
+		diamonds_collected[i] = save_file.get_var(diamonds_collected[i])
+
+# Фиксация завершения уровня и количество собранных алмазов.
+func _level_complete() -> void:
+	last_completed_level = max(last_completed_level, LevelManager.current_level_number)
+	diamonds_collected[LevelManager.current_level_number-1] = max(LevelManager.current_level.diamonds,diamonds_collected[LevelManager.current_level_number-1])
+	
+	save_game()
+
+# Функция сохранения прогресса игры.
+func save_game() -> void:
+	var save_file = FileAccess.open(\"user://savegame.save\", FileAccess.WRITE)
+	
+	if save_file == null or not save_file.is_open():
+		print(\"Ошибка при сохранении файла\")
+		return
+	
+	save_file.store_var(last_completed_level)
+	
+	for i in (diamonds_collected.size()):
+		save_file.store_var(diamonds_collected[i])
+	
+	save_file.close()
+
+func _wipe() -> void:
+	DirAccess.remove_absolute(\"user://savegame.save\")
 "
 
 [node name="Global" type="Node"]
@@ -36,3 +96,9 @@ stream = ExtResource("1_fh85t")
 volume_db = -25.0
 autoplay = true
 parameters/looping = true
+
+[node name="YandexSDK" type="Node" parent="."]
+script = SubResource("GDScript_ssljk")
+
+[node name="Data" type="Node" parent="."]
+script = SubResource("GDScript_kdaxq")

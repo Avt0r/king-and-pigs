@@ -55,8 +55,7 @@ func _hit():
 func _unhandled_input(_event: InputEvent) -> void:
 	if Input.is_action_pressed("Menu"):
 		if !window_menu.visible:
-			window_menu.show()
-			get_tree().paused = true
+			_on_menu()
 		else:
 			window_menu.hide()
 			get_tree().paused = false
@@ -70,6 +69,11 @@ func _to_main_menu() -> void:
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://Scenes/UI/MainMenu.tscn")
 
+func _on_menu():
+	window_menu.show()
+	window_dead.hide()
+	get_tree().paused = true
+
 func _on_dead():
 	window_dead.show()
 	get_tree().paused = true
@@ -79,4 +83,7 @@ func _on_reload_pressed() -> void:
 	get_tree().reload_current_scene()
 
 func _on_add_hp_pressed() -> void:
-	Global.js_show_rewarded_ad()
+	Global.YandexSDK.show_rewarded_ad()
+
+func _on_ad_rewarded() -> void:
+	_on_menu()

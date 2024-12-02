@@ -2,6 +2,7 @@ extends Node
 
 @onready var interface = $CanvasLayer/Interface
 var map 
+var player
 
 var diamonds = 0
 
@@ -21,6 +22,7 @@ func _load_map():
 	
 	add_child(m.instantiate())
 	map = $TileMap
+	player = map.get_node("Player")
 
 func _receive_diamond():
 	diamonds += 1

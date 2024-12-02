@@ -9,22 +9,27 @@ func _ready() -> void:
 	window_welcome.show()
 	window_choose_level.hide()
 	
-	DataManager._load()
+	#Global.Data.._wipe()
+	
+	Global.Data._load()
 	
 	levels = $CanvasLayer/MenuChooseLevel/GridContainer.get_children()
 	
-	if DataManager.last_completed_level <= 0:
+	if Global.Data.last_completed_level <= 0:
 		levels[0].disabled = false
 	else:
-		for i in DataManager.last_completed_level:
+		for i in Global.Data.last_completed_level:
 			levels[i].disabled = false
 			
-			if i == DataManager.levels_count - 1: break
+			if i == Global.Data.levels_count - 1: break
 			
 			levels[i+1].disabled = false
 	
 	for l in levels.size():
-		levels[l].get_child(0).text = str(DataManager.diamonds_collected[l])+"/"+str(DataManager.diamonds_all[l])
+		levels[l].get_child(0).text = str(Global.Data.diamonds_collected[l])+"/"+str(Global.Data.diamonds_all[l])
+	
+	Global.YandexSDK.ready()
+	Global.YandexSDK.game_start()
 
 func _on_control_gui_input(_event: InputEvent) -> void:
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
