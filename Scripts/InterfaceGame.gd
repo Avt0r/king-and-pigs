@@ -80,12 +80,14 @@ func _on_menu():
 	
 	window_menu.show()
 	window_dead.hide()
+	
 	get_tree().paused = true
 
 func _on_dead():
 	Global.YandexSDK.game_stop()
 	
 	window_dead.show()
+	
 	get_tree().paused = true
 
 func _on_reload_pressed() -> void:

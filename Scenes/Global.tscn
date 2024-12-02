@@ -9,18 +9,11 @@ script/source = "extends Node
 @onready var YandexSDK = $YandexSDK
 @onready var Data = $Data
 @onready var audio = $AudioStreamPlayer
-
-func _ready() -> void:
-	YandexSDK.resumeGame.connect(func()-> void: audio.stop())
-	YandexSDK.pauseGame.connect(func() -> void: audio.play())
 "
 
 [sub_resource type="GDScript" id="GDScript_ssljk"]
 resource_name = "YandexSDK"
 script/source = "extends Node
-
-signal pauseGame
-signal resumeGame
 
 var pauseGameCallback = JavaScriptBridge.create_callback(_on_game_paused)
 var resumeGameCallback = JavaScriptBridge.create_callback(_on_game_resumed)
@@ -38,10 +31,10 @@ func ready() -> void:
 	win.Ready()
 
 func _on_game_paused(args):
-	pauseGame.emit()
+	Global.audio.stream_paused = true
 
 func _on_game_resumed(args):
-	pauseGame.emit()
+	Global.audio.stream_paused = false
 
 func game_start() -> void:
 	win.GameStart()
