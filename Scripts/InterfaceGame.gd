@@ -26,6 +26,8 @@ func _ready() -> void:
 	window_game.show()
 	window_menu.hide()
 	window_dead.hide()
+	
+	Global.YandexSDK.game_start()
 
 func _set_diamonds_count(count):
 	if count / 10 - 1 < 0: 
@@ -57,10 +59,14 @@ func _unhandled_input(_event: InputEvent) -> void:
 		if !window_menu.visible:
 			_on_menu()
 		else:
+			Global.YandexSDK.game_start()
+			
 			window_menu.hide()
 			get_tree().paused = false
 
 func _on_resume_pressed() -> void:
+	Global.YandexSDK.game_start()
+	
 	window_menu.hide()
 	window_dead.hide()
 	get_tree().paused = false
@@ -70,11 +76,15 @@ func _to_main_menu() -> void:
 	get_tree().change_scene_to_file("res://Scenes/UI/MainMenu.tscn")
 
 func _on_menu():
+	Global.YandexSDK.game_stop()
+	
 	window_menu.show()
 	window_dead.hide()
 	get_tree().paused = true
 
 func _on_dead():
+	Global.YandexSDK.game_stop()
+	
 	window_dead.show()
 	get_tree().paused = true
 
